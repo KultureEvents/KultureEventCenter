@@ -1,0 +1,108 @@
+.home-hero {
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  transition: background-image 0.5s ease-in-out !important;
+}
+
+@media screen and (max-width: 767px) {
+  .home-hero {
+    height: 100vh;
+  }
+}
+
+.home-hero__container {
+  display: flex;
+  width: 875px;
+  padding: 0px 56px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.home-hero__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.home-hero__container-title {
+  color: var(--primary-500);
+  text-align: center;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+
+  @media screen and (max-width: 767px) {
+    font-size: 36px;
+  }
+}
+
+.home-hero__container-subtitle {
+  color: var(--primary-500);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.home-hero__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  & .home-hero__btn {
+    display: flex;
+    width: 151px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--primary-500);
+    color: var(--primary-500);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  .home-hero__btn:hover {
+    border: 1px solid var(--primary-500);
+    background-color: var(--primary-500);
+    color: var(--neutral-000);
+  }
+}
+
+.home-hero__pagination-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.home-hero__pagination-dot-item {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 1000px;
+  border: 1px solid var(--primary-500);
+  cursor: pointer;
+}
+
+.home-hero__pagination-dot-item.active {
+  background-color: var(--primary-500);
+  border: transparent;
+}
