@@ -1,0 +1,64 @@
+.contactHero__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  align-self: stretch;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.contactHero__container_contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  flex: 1 0 0;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
+  & h2 {
+    color: var(--neutral-000);
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  & p {
+    color: var(--Colors-Neutral-01, #181818);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+  }
+}
+
+.contactHero__container_image {
+  position: relative;
+
+  & button {
+    display: flex;
+    width: 146px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+    transform: translate(-50%, -50%);
+    background: var(--Colors-Primary-01, #f8f6f5);
+  }
+}

@@ -63,6 +63,9 @@
 
 .message__content svg {
   width: 48px;
+  @media screen and (max-width: 768px) {
+    transform: rotate(90deg);
+  }
 }
 
 .message__contentImg {

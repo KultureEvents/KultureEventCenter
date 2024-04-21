@@ -1,17 +1,15 @@
 import React from "react";
-import styles from "./page.module.css";
 import PageBanner from "@/components/pageBanner/PageBanner";
+import { ImgPlaceholder3 } from "../../../public/images";
+import Message from "@/components/message/Message";
+import ContactHero from "@/appSections/contactSection/ContactHero";
 
 const ContactPage = () => {
   return (
     <>
       <PageBanner />
-      <section className="section contact">
-        <div className="contact__container container">
-          <h1 className="title">Contact</h1>
-          <p className="subtitle">This is the contact page</p>
-        </div>
-      </section>
+      <ContactHero />
+      <Message imgSrc={ImgPlaceholder3} />
     </>
   );
 };
