@@ -1,10 +1,10 @@
 import React from "react";
-import "./pageBanner.css";
+import styles from "./PageBanner.module.css";
 
 const PageBanner = () => {
   return (
-    <section className="page-banner flex">
-      <div className="page-banner__container flex">
+    <section className={`${styles.page_banner} flex`}>
+      <div className={`${styles.page_banner__container} flex`}>
         <h2 className="page-banner__title">KULTURE EVENTS</h2>
       </div>
     </section>

@@ -17,7 +17,7 @@ export { default as Slider2 } from "./hero-banner-2.png";
 export { default as Slider3 } from "./hero-banner-3.png";
 
 export { default as HomeIntro1 } from "./home-Intro-1.png";
-export { default as HomeIntro2 } from "./home-Intro-2.png";
+export { default as HomeIntro2 } from "./home-intro-2.png";
 
 export { default as Team1 } from "./team1.png";
 export { default as Team2 } from "./team2.png";
