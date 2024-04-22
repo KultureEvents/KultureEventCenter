@@ -11,7 +11,7 @@ const PackageNavigation = ({
 }) => (
   <>
     {" "}
-    <Link href="/" className={styles.packages__bottom_link}>
+    <Link href="/bookings" className={styles.packages__bottom_link}>
       <span>Book Now</span>
     </Link>
     <div className={styles.packages__bottom_nav}>

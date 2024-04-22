@@ -21,6 +21,15 @@ const HomeHero = () => {
     return () => clearInterval(interval);
   }, [activeSlide, slides.length]);
 
+  const scrollToSection = () => {
+    const section = document.getElementById("packages");
+    const offsetTop = section.offsetTop;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       className={styles["home-hero"] + " flex"} // Use CSS module classNames
@@ -41,12 +50,16 @@ const HomeHero = () => {
           </p>
 
           <div className={styles["home-hero__buttons"]}>
-            <Link href="/" className={styles["home-hero__btn"]}>
+            <Link href="/about" className={styles["home-hero__btn"]}>
               Learn More
             </Link>
-            <Link href="/" className={styles["home-hero__btn"]}>
+            <button
+              type="button"
+              className={styles["home-hero__btn"]}
+              onClick={scrollToSection}
+            >
               Book Now
-            </Link>
+            </button>
           </div>
         </div>
 

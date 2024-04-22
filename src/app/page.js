@@ -13,7 +13,7 @@ const HomePage = () => {
     <>
       <HomeHero />
       <HomeIntro />
-      <HomeService />
+      <HomeService title={"Our Event Services"} />
       <Packages />
       <Testimonial />
       <Team />

@@ -41,7 +41,7 @@ const Packages = () => {
   };
 
   return (
-    <section className={`${styles.packages} section`}>
+    <section className={`${styles.packages} section`} id="packages">
       <div className={`${styles.packages__container} container`}>
         <PackageImage
           className={styles.packages__container_leftImg}

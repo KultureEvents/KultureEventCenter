@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./HomeIntro.module.css"; // Import CSS module
 import Image from "next/image";
@@ -5,6 +7,15 @@ import Link from "next/link";
 import { HomeIntro1, HomeIntro2 } from "../../../../public/images";
 
 const HomeIntro = () => {
+  const scrollToSection = () => {
+    const section = document.getElementById("packages");
+    const offsetTop = section.offsetTop;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={`${styles.homeIntro} section`}>
       <div className={`${styles.homeIntro__container} container`}>
@@ -33,11 +44,12 @@ const HomeIntro = () => {
             <button
               type="button"
               className={`${styles.button} ${styles.buttonSecondary}`}
+              onClick={scrollToSection}
             >
               View Our Packages
             </button>
             <Link
-              href="/about"
+              href="/events"
               className={`${styles.link} ${styles.buttonPrimary}`}
             >
               <span>View Our Venues</span>

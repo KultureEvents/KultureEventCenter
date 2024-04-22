@@ -17,7 +17,7 @@ export const NavLinks = [
   {
     id: 2,
     title: "Event Halls",
-    url: "/event-halls",
+    url: "/events",
   },
   {
     id: 3,

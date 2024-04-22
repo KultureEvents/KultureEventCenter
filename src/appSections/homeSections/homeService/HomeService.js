@@ -22,13 +22,11 @@ const serviceItems = [
   },
 ];
 
-const HomeService = () => {
+const HomeService = ({ title }) => {
   return (
     <section className={`${styles.homeService} section`}>
       <div className={`${styles.homeService__container} container flex`}>
-        <h2 className={styles.homeService__container_title}>
-          Our Event Services
-        </h2>
+        <h2 className={styles.homeService__container_title}>{title}</h2>
         <div className={styles.homeService__contents}>
           {serviceItems.map((item, index) => (
             <ServiceItem key={index} {...item} />

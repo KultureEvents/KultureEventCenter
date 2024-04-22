@@ -1,17 +1,24 @@
 import React from "react";
-import styles from "./page.module.css";
 import PageBanner from "@/components/pageBanner/PageBanner";
+import Packages from "@/components/packages/Packages";
+import CTA from "@/components/cta/CTA";
+import Gallery from "@/appSections/gallerySection/Gallery";
 
 const GalleryPage = () => {
   return (
     <>
       <PageBanner />
-      <section className={`${styles.gallery} section`}>
-        <div className="gallery__container container">
-          <h1 className="title">Gallery</h1>
-          <p className="subtitle">This is the gallery page</p>
-        </div>
-      </section>
+      <Gallery />
+      <Packages />
+      <CTA
+        className={"cta__link_gallery"}
+        title={"Book A Free Consultation With Us"}
+        subText={
+          "  Ready to get started on your next project? Book a free consultation with our experienced team today and take the first step towards achieving your goals. Don't wait, schedule your consultation now!"
+        }
+        linkText={"Contact Us"}
+        link={"/contact-us"}
+      />
     </>
   );
 };

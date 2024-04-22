@@ -1,5 +1,4 @@
 .testimonial {
-  padding: 8px;
   @media screen and (max-width: 768px) {
     background-color: #f8f6f5;
   }

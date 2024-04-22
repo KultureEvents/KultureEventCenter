@@ -213,3 +213,10 @@ button {
   visibility: visible;
   bottom: 0;
 }
+
+.cta__link_gallery {
+  width: 146px;
+}
+.cta__link_events {
+  width: 235px;
+}
