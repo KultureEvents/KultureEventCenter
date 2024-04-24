@@ -74,47 +74,46 @@ import { useSearchParams } from "next/navigation";
 import { bookingDetails } from "@/data/data"; // Import the bookingDetails array
 
 const BookingsPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingsContent />
+    </Suspense>
+  );
+};
+
+const BookingsContent = () => {
   const searchParams = useSearchParams();
+  const selectedPackage = searchParams.get("package");
+
+  // Find the selected package details from the bookingDetails array
+  const selectedBookingDetails = bookingDetails.find(
+    (packageDetail) => packageDetail.name === selectedPackage
+  );
 
   return (
     <section className="section bookings">
       <div className="bookings__container container">
         <h1 className="title">Bookings</h1>
-
-        <Suspense fallback={<p>Loading booking details...</p>}>
-          {searchParams.get("package") ? ( // Check for package presence before rendering
+        {selectedPackage ? (
+          <>
             <div>
-              <h2>
-                {getSelectedBookingDetails(searchParams.get("package")).name}{" "}
-                Package Details
-              </h2>
-              <p>
-                Fee:{" "}
-                {getSelectedBookingDetails(searchParams.get("package")).fee}
-              </p>
+              <h2>{selectedBookingDetails.name} Package Details</h2>
+              <p>Fee: {selectedBookingDetails.fee}</p>
               <Image
-                src={
-                  getSelectedBookingDetails(searchParams.get("package"))
-                    .images[0]
-                }
+                src={selectedBookingDetails.images[0]}
                 alt="package"
                 width={160}
                 height={150}
               />
               <Image
-                src={
-                  getSelectedBookingDetails(searchParams.get("package"))
-                    .images[1]
-                }
+                src={selectedBookingDetails.images[1]}
                 alt="package"
                 width={160}
                 height={150}
               />
               <h3>Add-Ons:</h3>
               <ul>
-                {getSelectedBookingDetails(
-                  searchParams.get("package")
-                ).addOn.map((addOn, index) => (
+                {selectedBookingDetails.addOn.map((addOn, index) => (
                   <li key={index}>
                     {addOn.star}
                     <p>{addOn.text}</p>
@@ -123,21 +122,13 @@ const BookingsPage = () => {
                 ))}
               </ul>
             </div>
-          ) : (
-            <p className="subtitle">Please select a package to proceed.</p>
-          )}
-        </Suspense>
+          </>
+        ) : (
+          <p className="subtitle">Please select a package to proceed.</p>
+        )}
       </div>
     </section>
   );
 };
 
-function getSelectedBookingDetails(selectedPackage) {
-  // Find the selected package details from the bookingDetails array
-  return bookingDetails.find(
-    (packageDetail) => packageDetail.name === selectedPackage
-  );
-}
-
 export default BookingsPage;
-
