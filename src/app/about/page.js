@@ -9,7 +9,11 @@ import AboutInfo from "@/appSections/aboutSections/aboutInfo/AboutInfo";
 const AboutPage = () => {
   return (
     <>
-      <PageBanner />
+      <PageBanner
+        backgroundImage="/images/banner.png"
+        title="KULTURE EVENTS"
+      />
+
       <AboutHero />
       <Team />
       <AboutInfo />

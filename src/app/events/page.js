@@ -4,11 +4,13 @@ import PageBanner from "@/components/pageBanner/PageBanner";
 import Packages from "@/components/packages/Packages";
 import CTA from "@/components/cta/CTA";
 import HomeService from "@/appSections/homeSections/homeService/HomeService";
+import EventHero from "@/appSections/eventSection/EventHero";
 
 const EventHallPage = () => {
   return (
     <>
-      <PageBanner />
+      <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
+      <EventHero />
       <HomeService title={"Services We Offer"} />
       <Packages />
       <CTA

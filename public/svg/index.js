@@ -12,3 +12,4 @@ export { default as Arrow2 } from "./Arrow2.svg";
 export { default as SilverStar } from "./silver-star.svg";
 export { default as GoldStar } from "./gold-start.svg";
 export { default as PlatinumStar } from "./platinum-star.svg";
+export { default as ArrowCircle } from "./arrow-circle.svg";

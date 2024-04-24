@@ -39,6 +39,8 @@ export { default as contactHeroImg } from "./contactHero.png";
 
 export { default as aboutInfo1 } from "./aboutInfo1.png";
 
+export { default as floorPlan } from "./floor-plan.png";
+
 export { default as galleryImg1 } from "./gallery-1.png";
 export { default as galleryImg2 } from "./gallery-2.png";
 export { default as galleryImg3 } from "./gallery-3.png";
@@ -51,3 +53,11 @@ export { default as galleryImg9 } from "./gallery-9.png";
 export { default as galleryImg10 } from "./gallery-10.png";
 export { default as galleryImg11 } from "./gallery-11.png";
 export { default as galleryImg12 } from "./gallery-12.png";
+
+export { default as singleEventHall1 } from "./single-event-hall1.png";
+export { default as singleEventHall2 } from "./single-event-hall2.png";
+export { default as singleEventHall3 } from "./single-event-hall3.png";
+export { default as singleEventHall4 } from "./single-event-hall4.png";
+export { default as singleEventHall5 } from "./single-event-hall-5.png";
+export { default as singleEventHall6 } from "./single-event-hall-6.png";
+export { default as singleEventHall7 } from "./single-event-hall-7.png";

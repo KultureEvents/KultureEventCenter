@@ -7,7 +7,7 @@ import ContactHero from "@/appSections/contactSection/ContactHero";
 const ContactPage = () => {
   return (
     <>
-      <PageBanner />
+      <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
       <ContactHero />
       <Message imgSrc={ImgPlaceholder3} />
     </>

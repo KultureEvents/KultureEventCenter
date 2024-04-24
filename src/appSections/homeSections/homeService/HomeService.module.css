@@ -18,7 +18,7 @@
 .homeService__contents {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 24px;
   align-self: stretch;
 }

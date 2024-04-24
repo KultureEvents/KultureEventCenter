@@ -7,7 +7,7 @@ import Gallery from "@/appSections/gallerySection/Gallery";
 const GalleryPage = () => {
   return (
     <>
-      <PageBanner />
+      <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
       <Gallery />
       <Packages />
       <CTA

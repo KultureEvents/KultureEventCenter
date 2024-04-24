@@ -1,4 +1,5 @@
 // PackageNavigation.js
+// "use client";
 import React from "react";
 import Link from "next/link";
 import styles from "../Packages.module.css";
@@ -8,36 +9,47 @@ const PackageNavigation = ({
   currentPackage,
   handlePrevPackage,
   handleNextPackage,
-}) => (
-  <>
-    {" "}
-    <Link href="/bookings" className={styles.packages__bottom_link}>
-      <span>Book Now</span>
-    </Link>
-    <div className={styles.packages__bottom_nav}>
-      {/* Previous button */}
-      {currentPackage !== "Silver" && (
-        <button
-          onClick={handlePrevPackage}
-          className={`${styles.packages__bottom_button} ${styles.packages__bottom_prev}`}
-        >
-          <Arrow1 />
-          <span>Prev</span>
-        </button>
-      )}
+}) => {
+  // Initialize useRouter hook
 
-      {/* Next button */}
-      {currentPackage !== "Platinum" && (
-        <button
-          onClick={handleNextPackage}
-          className={`${styles.packages__bottom_button} ${styles.packages__bottom_next}`}
-        >
-          <span>Next</span>
-          <Arrow2 />
-        </button>
-      )}
-    </div>
-  </>
-);
+  return (
+    <>
+      {" "}
+      <Link
+        // href={`/bookings/?category=${category}`}
+        href={{
+          pathname: "/bookings",
+          query: { package: currentPackage },
+        }}
+        className={styles.packages__bottom_link}
+      >
+        <span>Book Now</span>
+      </Link>
+      <div className={styles.packages__bottom_nav}>
+        {/* Previous button */}
+        {currentPackage !== "Silver" && (
+          <button
+            onClick={handlePrevPackage}
+            className={`${styles.packages__bottom_button} ${styles.packages__bottom_prev}`}
+          >
+            <Arrow1 />
+            <span>Prev</span>
+          </button>
+        )}
+
+        {/* Next button */}
+        {currentPackage !== "Platinum" && (
+          <button
+            onClick={handleNextPackage}
+            className={`${styles.packages__bottom_button} ${styles.packages__bottom_next}`}
+          >
+            <span>Next</span>
+            <Arrow2 />
+          </button>
+        )}
+      </div>
+    </>
+  );
+};
 
 export default PackageNavigation;

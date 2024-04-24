@@ -1,5 +1,22 @@
 import { SilverStar, GoldStar, PlatinumStar } from "../../public/svg";
 
+import {
+  floorPlan,
+  singleEventHall1,
+  singleEventHall2,
+  singleEventHall3,
+  singleEventHall4,
+  singleEventHall5,
+  singleEventHall6,
+  singleEventHall7,
+  PackagesImg1,
+  PackagesImg2,
+  PackagesImg3,
+  PackagesImg4,
+  PackagesImg5,
+  PackagesImg6,
+} from "../../public/images";
+
 //Navbar Links
 export const NavLinks = [
   {
@@ -91,126 +108,126 @@ export const packageDetails = {
 
   Gold: [
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "6-Hour Venue Rental",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Gold Chiavari Chairs",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "72 Inch Round Tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Tablecloths (black)",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "4 Six-Foot Rectangular Tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Free Wifi",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Up-Lighting",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Access to (4) 58” TVs",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Black Leather Sofas with tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Sound System w/ Bluetooth",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Use of In-House Bar",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Food Prep Area Free Ample Parking",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "Cleaning (with exception of trash)",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "360 Phone Booth 2 hr",
     },
     {
-      icon: <SilverStar />,
+      icon: <GoldStar />,
       text: "2 Throne Chairs (W/S)",
     },
   ],
 
   Platinum: [
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "6-Hour Venue Rental",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Gold Chiavari Chairs",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "72 Inch Round Tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Tablecloths (black)",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "4 Six-Foot Rectangular Tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Free Wifi",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Up-Lighting",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Access to (4) 58” TVs",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Black Leather Sofas with tables",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Sound System w/ Bluetooth",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Use of In-House Bar",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Food Prep Area Free Ample Parking",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "Cleaning (with exception of trash)",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "360 Phone Booth 2 hr",
     },
     {
-      icon: <SilverStar />,
+      icon: <PlatinumStar />,
       text: "2 Throne Chairs (W/S)",
     },
     {
@@ -219,3 +236,132 @@ export const packageDetails = {
     },
   ],
 };
+
+export const bookingDetails = [
+  {
+    name: "Silver",
+    fee: "$2,150",
+    images: [PackagesImg1, PackagesImg2],
+    addOn: [
+      {
+        star: <SilverStar />,
+        text: "Sprinter Van round trip",
+        fee: "$50",
+      },
+      {
+        star: <SilverStar />,
+        text: "Throne Chair (x1)",
+        fee: "$30",
+      },
+      {
+        star: <SilverStar />,
+        text: "Red carpet",
+        fee: "$20",
+      },
+    ],
+  },
+  {
+    name: "Gold",
+    fee: "$3,500",
+    images: [PackagesImg3, PackagesImg4],
+    addOn: [
+      {
+        star: <GoldStar />,
+        text: "Sprinter Van round trip",
+        fee: "$50",
+      },
+      {
+        star: <GoldStar />,
+        text: "Throne Chair (x1)",
+        fee: "$30",
+      },
+      {
+        star: <GoldStar />,
+        text: "Red carpet",
+        fee: "$20",
+      },
+    ],
+  },
+  {
+    name: "Platinum",
+    fee: "$5,000",
+    images: [PackagesImg5, PackagesImg6],
+    addOn: [
+      {
+        star: <PlatinumStar />,
+        text: "Sprinter Van round trip",
+        fee: "$50",
+      },
+      {
+        star: <PlatinumStar />,
+        text: "Throne Chair (x1)",
+        fee: "$30",
+      },
+      {
+        star: <PlatinumStar />,
+        text: "Red carpet",
+        fee: "$20",
+      },
+    ],
+  },
+];
+
+export const singleEventData = [
+  {
+    slug: "I",
+    title: "Kulture Event Hall I (Large)",
+    subtitle:
+      "Our events center offers you two fantastic options to choose from, making sure that you have the perfect venue for your next event. Whether you're looking for a large space to accommodate a big gathering or a smaller, more intimate setting, we've got you covered. Our 'Kulture Event I' is the perfect choice for those looking to host a grand celebration, while our 'Kulture Event II' offers a cozy and intimate space for more low-key events. Choose us and make your next event unforgettable!",
+
+    floorPlanInfo: (
+      <>
+        Kulture Event II: <br /> <span>4250 SQ Ft</span>
+      </>
+    ),
+
+    floorPlanImage: floorPlan,
+
+    images: [
+      singleEventHall1,
+      singleEventHall2,
+      singleEventHall3,
+      singleEventHall4,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall5,
+      singleEventHall6,
+      singleEventHall7,
+    ],
+  },
+  // Add more objects for other routes if needed
+  {
+    slug: "II",
+    title: "Kulture Event Hall II (Small)",
+    subtitle:
+      "Our events center offers you two fantastic options to choose from, making sure that you have the perfect venue for your next event. Whether you're looking for a large space to accommodate a big gathering or a smaller, more intimate setting, we've got you covered. Our 'Kulture Event I' is the perfect choice for those looking to host a grand celebration, while our 'Kulture Event II' offers a cozy and intimate space for more low-key events. Choose us and make your next event unforgettable!",
+
+    floorPlanInfo: (
+      <>
+        Kulture Event II: <br /> <span>2650 SQ Ft</span>
+      </>
+    ),
+
+    floorPlanImage: floorPlan,
+
+    images: [
+      singleEventHall1,
+      singleEventHall2,
+      singleEventHall3,
+      singleEventHall4,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall1,
+      singleEventHall5,
+      singleEventHall6,
+      singleEventHall7,
+    ],
+  },
+];

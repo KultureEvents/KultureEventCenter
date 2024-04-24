@@ -2,10 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./Packages.module.css";
-import Image from "next/image";
-import Link from "next/link";
-
-import { packageDetails } from "@/data/data";
 import {
   PackagesImg1,
   PackagesImg2,

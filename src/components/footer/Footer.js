@@ -91,9 +91,13 @@ const Footer = () => {
             </Link>
           </div>
 
-          <p className={styles["footer__link-text"]}>
+          <Link
+            href="https://www.radiksez.com/"
+            className={styles["footer__link-text"]}
+            target="_blank"
+          >
             DESIGN INSPIRED BY RADIKSEZ
-          </p>
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,6 +1,5 @@
 // PackageImage.js
 import React from "react";
-import styles from "../Packages.module.css";
 import Image from "next/image";
 
 const PackageImage = ({ imageSrc, className }) => (
