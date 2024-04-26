@@ -5,6 +5,9 @@
   gap: 32px;
   flex: 1 0 0;
   background: var(--white);
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+  }
 }
 
 .form__wrapper {
