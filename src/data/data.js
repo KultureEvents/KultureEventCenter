@@ -49,7 +49,7 @@ export const NavLinks = [
   {
     id: 2,
     title: "Venues",
-    url: "/events",
+    url: "/venues",
   },
   {
     id: 3,
