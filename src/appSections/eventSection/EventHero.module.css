@@ -13,8 +13,15 @@
   }
 }
 
-.eventHero__container_link {
+.eventHero__container_link_1 {
   background-image: url("../../../public/images/eventHero1.png");
+}
+.eventHero__container_link_2 {
+  background-image: url("../../../public/images/eventHero2.png");
+}
+
+.eventHero__container_link_1,
+.eventHero__container_link_2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

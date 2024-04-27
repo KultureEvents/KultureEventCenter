@@ -6,7 +6,7 @@ const EventHero = () => {
   return (
     <section className={`${styles.eventHero} section flex`}>
       <div className={`${styles.eventHero__container} container`}>
-        <div className={styles.eventHero__container_link}>
+        <div className={styles.eventHero__container_link_1}>
           <div className={styles.link__text}>
             <h3>Kulture Event I (Capacity 250 Audience)</h3>
             <Link href={`/events/I`}>
@@ -15,7 +15,7 @@ const EventHero = () => {
           </div>
         </div>
 
-        <div className={styles.eventHero__container_link}>
+        <div className={styles.eventHero__container_link_2}>
           <div className={styles.link__text}>
             <h3>Kulture Event II (Capacity 60 Audience)</h3>
             <Link href={`/events/II`}>
