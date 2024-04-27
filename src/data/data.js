@@ -48,7 +48,7 @@ export const NavLinks = [
 
   {
     id: 2,
-    title: "Event Halls",
+    title: "Venues",
     url: "/events",
   },
   {
@@ -261,17 +261,17 @@ export const bookingDetails = [
       {
         star: <SilverStar />,
         text: "Sprinter Van round trip",
-        fee: "$500",
-      },
-      {
-        star: <SilverStar />,
-        text: "Throne Chair (x1)",
         fee: "$300",
       },
       {
         star: <SilverStar />,
+        text: "Throne Chair (x1)",
+        fee: "$100",
+      },
+      {
+        star: <SilverStar />,
         text: "Red carpet with gold stanchions",
-        fee: "$200",
+        fee: "$100",
       },
     ],
   },
@@ -283,17 +283,17 @@ export const bookingDetails = [
       {
         star: <GoldStar />,
         text: "Sprinter Van round trip",
-        fee: "$500",
-      },
-      {
-        star: <GoldStar />,
-        text: "Throne Chair (x1)",
         fee: "$300",
       },
       {
         star: <GoldStar />,
+        text: "Throne Chair (x1)",
+        fee: "$100",
+      },
+      {
+        star: <GoldStar />,
         text: "Red carpet with gold stanchions",
-        fee: "$200",
+        fee: "$100",
       },
     ],
   },

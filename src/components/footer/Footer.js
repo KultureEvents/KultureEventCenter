@@ -32,8 +32,8 @@ import {
   WhatsApp,
   Facebook,
   Instagram,
-  YouTube,
   Logo,
+  Tiktok,
 } from "../../../public/svg";
 const Footer = () => {
   return (
@@ -65,18 +65,27 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link
+                href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
+                target="_blank"
+              >
                 <Facebook />
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link
+                href="https://www.instagram.com/kultureeventsatl?igsh=MWM0bXgxanU3OWpteg%3D%3D&utm_source=qr"
+                target="_blank"
+              >
                 <Instagram />
               </Link>
             </li>
             <li>
-              <Link href="/">
-                <YouTube />
+              <Link
+                href="https://www.tiktok.com/@kultureeventsatl?_t=8lqnrFfsuUw&_r=1"
+                target="_blank"
+              >
+                <Tiktok />
               </Link>
             </li>
           </ul>
