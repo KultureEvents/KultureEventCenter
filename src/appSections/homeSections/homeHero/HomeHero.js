@@ -4,10 +4,7 @@ import styles from "./page.module.css"; // Import CSS module
 
 import Link from "next/link";
 
-import { Slider1, Slider2, Slider3 } from "../../../../public/images";
-
-const HomeHero = () => {
-  const slides = [Slider1, Slider2, Slider3];
+const HomeHero = ({ slides }) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleDotClick = (index) => {
@@ -16,10 +13,13 @@ const HomeHero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSlide(activeSlide === slides.length - 1 ? 0 : activeSlide + 1);
+      setActiveSlide((prevSlide) =>
+        prevSlide === slides.length - 1 ? 0 : prevSlide + 1
+      );
     }, 3000);
+
     return () => clearInterval(interval);
-  }, [activeSlide, slides.length]);
+  }, [slides.length]); // Only re-run the effect if slides.length changes
 
   const scrollToSection = () => {
     const section = document.getElementById("packages");
@@ -32,8 +32,8 @@ const HomeHero = () => {
 
   return (
     <section
-      className={styles["home-hero"] + " flex"} // Use CSS module classNames
-      style={{ backgroundImage: `url(${slides[activeSlide].src})` }}
+      className={`${styles["home-hero"]} flex`}
+      style={{ backgroundImage: `url(${slides[activeSlide]})` }}
     >
       <div className={styles["home-hero__container"]}>
         <div className={styles["home-hero__contents"]}>
@@ -64,7 +64,7 @@ const HomeHero = () => {
         </div>
 
         <div className={styles["home-hero__pagination-dot"]}>
-          {[...Array(3)].map((_, index) => (
+          {slides.map((_, index) => (
             <div
               key={index}
               className={`${styles["home-hero__pagination-dot-item"]} ${

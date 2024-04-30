@@ -6,7 +6,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { NavLinks } from "@/data/data";
 import "./Navbar.css";
 import {
-  WhatsApp,
   Facebook,
   Instagram,
   LongArr,
@@ -49,19 +48,6 @@ const Navbar = () => {
           <div className="navbar-banner__socials">
             <ul className="flex">
               <li>
-                <Link href="/">
-                  <WhatsApp />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
-                  target="_blank"
-                >
-                  <Facebook />
-                </Link>
-              </li>
-              <li>
                 <Link
                   href="https://www.instagram.com/kultureeventsatl?igsh=MWM0bXgxanU3OWpteg%3D%3D&utm_source=qr"
                   target="_blank"
@@ -75,6 +61,14 @@ const Navbar = () => {
                   target="_blank"
                 >
                   <Tiktok />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
+                  target="_blank"
+                >
+                  <Facebook />
                 </Link>
               </li>
             </ul>
@@ -122,19 +116,6 @@ const Navbar = () => {
             <div className="nav__socials">
               <ul className="flex">
                 <li>
-                  <Link href="/">
-                    <WhatsApp />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
-                    target="_blank"
-                  >
-                    <Facebook />
-                  </Link>
-                </li>
-                <li>
                   <Link
                     href="https://www.instagram.com/kultureeventsatl?igsh=MWM0bXgxanU3OWpteg%3D%3D&utm_source=qr"
                     target="_blank"
@@ -148,6 +129,14 @@ const Navbar = () => {
                     target="_blank"
                   >
                     <Tiktok />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
+                    target="_blank"
+                  >
+                    <Facebook />
                   </Link>
                 </li>
               </ul>

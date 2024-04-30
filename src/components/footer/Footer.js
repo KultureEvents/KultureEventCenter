@@ -1,41 +1,27 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { client } from "@/sanityClient/sanity";
 
-import {
-  Footer1,
-  Footer2,
-  Footer3,
-  Footer4,
-  Footer5,
-  Footer6,
-} from "../../../public/images";
-const carouselItemStyles = [
-  "item-1",
-  "item-2",
-  "item-3",
-  "item-4",
-  "item-5",
-  "item-6",
-  "item-7",
-  "item-8",
-  "item-9",
-  "item-10",
-  "item-11",
-  "item-12",
-  "item-13",
-];
+export const getFooterImages = async () => {
+  try {
+    const groqQuery = `*[_type == "footer"]{
+      "footerImages": footerImages[].asset->url
+    }`;
 
-import {
-  WhatsApp,
-  Facebook,
-  Instagram,
-  Logo,
-  Tiktok,
-} from "../../../public/svg";
-const Footer = () => {
+    const data = await client.fetch(groqQuery);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching footer images:", error.message);
+    return null;
+  }
+};
+
+import { Facebook, Instagram, Logo, Tiktok } from "../../../public/svg";
+const Footer = async () => {
+  const footerImages = await getFooterImages();
+  const carouselItems = footerImages[0].footerImages;
   return (
     <footer className={`${styles.footer} section`}>
       <div className={styles.footer__container}>
@@ -49,9 +35,10 @@ const Footer = () => {
             {[...Array(13)].map((_, index) => (
               <span
                 key={index}
-                className={`${styles["footer__carousel-item"]} ${
-                  styles[carouselItemStyles[index]]
-                }`}
+                className={`${styles["footer__carousel-item"]}`}
+                style={{
+                  backgroundImage: `url(${carouselItems[index]})`,
+                }}
               ></span>
             ))}
           </div>
@@ -59,19 +46,6 @@ const Footer = () => {
 
         <div className={`${styles.footer__links} container`}>
           <ul className={styles["footer__links-social"]}>
-            <li>
-              <Link href="/">
-                <WhatsApp />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
-                target="_blank"
-              >
-                <Facebook />
-              </Link>
-            </li>
             <li>
               <Link
                 href="https://www.instagram.com/kultureeventsatl?igsh=MWM0bXgxanU3OWpteg%3D%3D&utm_source=qr"
@@ -86,6 +60,14 @@ const Footer = () => {
                 target="_blank"
               >
                 <Tiktok />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.facebook.com/kultureeventsatl?mibextid=LQQJ4d"
+                target="_blank"
+              >
+                <Facebook />
               </Link>
             </li>
           </ul>

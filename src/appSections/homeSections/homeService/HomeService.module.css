@@ -47,8 +47,6 @@
   width: 400px;
   height: 650px;
   position: relative;
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 768px) {
@@ -57,20 +55,12 @@
   }
 }
 
-.homeService__contents_item_1 {
-  background-image: url("../../../../public/images/homeService1.png");
-}
-.homeService__contents_item_3 {
-  background-image: url("../../../../public/images/homeService3.png");
-}
+
 
 .homeService__contents_item_2 {
   width: 400px;
   height: 720px;
   position: relative;
-  background-image: url("../../../../public/images/homeService2.png");
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 768px) {

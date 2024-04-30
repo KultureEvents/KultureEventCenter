@@ -3,12 +3,29 @@ import PageBanner from "@/components/pageBanner/PageBanner";
 import Packages from "@/components/packages/Packages";
 import CTA from "@/components/cta/CTA";
 import Gallery from "@/appSections/gallerySection/Gallery";
+import { client } from "@/sanityClient/sanity";
 
-const GalleryPage = () => {
+export const getGalleryImages = async () => {
+  try {
+    const groqQuery = `*[_type == "gallery"]{
+      "galleryImages": galleryImages[].asset->url
+    }`;
+
+    const data = await client.fetch(groqQuery);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching gallery images:", error.message);
+    return null;
+  }
+};
+
+const GalleryPage = async () => {
+  const galleryImages = await getGalleryImages();
   return (
     <>
       <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
-      <Gallery />
+      <Gallery galleryImages={galleryImages} />
       <Packages />
       <CTA
         className={"cta__link_gallery"}

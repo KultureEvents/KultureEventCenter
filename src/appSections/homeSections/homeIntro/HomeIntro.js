@@ -4,9 +4,8 @@ import React from "react";
 import styles from "./HomeIntro.module.css"; // Import CSS module
 import Image from "next/image";
 import Link from "next/link";
-import { HomeIntro1, HomeIntro2 } from "../../../../public/images";
 
-const HomeIntro = () => {
+const HomeIntro = ({ homeIntroImages }) => {
   const scrollToSection = () => {
     const section = document.getElementById("packages");
     const offsetTop = section.offsetTop;
@@ -20,7 +19,12 @@ const HomeIntro = () => {
     <section className={`${styles.homeIntro} section`}>
       <div className={`${styles.homeIntro__container} container`}>
         <div className={styles.homeIntro__contentImg}>
-          <Image src={HomeIntro1} alt="home intro 1" width={316} height={472} />
+          <Image
+            src={homeIntroImages[0]}
+            alt="home intro 1"
+            width={316}
+            height={472}
+          />
         </div>
 
         <div className={styles.homeIntro__contentText}>
@@ -58,7 +62,12 @@ const HomeIntro = () => {
         </div>
 
         <div className={styles.homeIntro__contentImg}>
-          <Image src={HomeIntro2} alt="home intro 1" width={316} height={470} />
+          <Image
+            src={homeIntroImages[1]}
+            alt="home intro 1"
+            width={316}
+            height={470}
+          />
         </div>
       </div>
     </section>

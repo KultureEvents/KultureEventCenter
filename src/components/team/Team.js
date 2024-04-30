@@ -1,23 +1,22 @@
 import React from "react";
 import styles from "./Team.module.css"; // Import CSS module
 import Image from "next/image";
-import { Team1, Team2 } from "../../../public/images";
 import Link from "next/link";
 
-const Team = () => {
+const Team = ({ teamImages }) => {
   return (
     <section className={`${styles.team} section`}>
       <div className={`${styles.team__container} container`}>
         <div className={styles.team__containerImages}>
           <div className={styles.team__containerImage}>
-            <Image src={Team1} alt="team" width={292} height={371} />
+            <Image src={teamImages[0]} alt="team" width={292} height={371} />
             <p className={styles.team__containerImageDesc}>
               KELSEY, EVENT PLANNER
             </p>
           </div>
 
           <div className={styles.team__containerImage}>
-            <Image src={Team2} alt="team" width={292} height={371} />
+            <Image src={teamImages[1]} alt="team" width={292} height={371} />
             <p className={styles.team__containerImageDesc}>
               ASHLEY, EVENT PLANNER
             </p>

@@ -1,34 +1,14 @@
 import React from "react";
 import styles from "./HomeService.module.css";
+import { urlForImage } from "@/sanityClient/sanityImageUrl";
 
-const serviceItems = [
-  {
-    title: "Weddings/Receptions",
-    description:
-      "We have developed a well-earned reputation for outstanding event planning expertise, impeccable service, and warm hospitality. We are committed to providing you and your guests with exceptional service and memorable experiences.",
-    itemClass: styles.homeService__contents_item_1,
-  },
-  {
-    title: "Birthday Parties",
-    description:
-      "We have developed a well-earned reputation for outstanding event planning expertise, impeccable service, and warm hospitality. We are committed to providing you and your guests with exceptional service and memorable experiences.",
-    itemClass: styles.homeService__contents_item_2,
-  },
-  {
-    title: "Graduation Parties",
-    description:
-      "We have developed a well-earned reputation for outstanding event planning expertise, impeccable service, and warm hospitality. We are committed to providing you and your guests with exceptional service and memorable experiences.",
-    itemClass: styles.homeService__contents_item_3,
-  },
-];
-
-const HomeService = ({ title }) => {
+const HomeService = ({ title, homeServiceData }) => {
   return (
     <section className={`${styles.homeService} section`}>
       <div className={`${styles.homeService__container} container flex`}>
         <h2 className={styles.homeService__container_title}>{title}</h2>
         <div className={styles.homeService__contents}>
-          {serviceItems.map((item, index) => (
+          {homeServiceData.map((item, index) => (
             <ServiceItem key={index} {...item} />
           ))}
         </div>
@@ -37,9 +17,17 @@ const HomeService = ({ title }) => {
   );
 };
 
-const ServiceItem = ({ title, description, itemClass }) => {
+const ServiceItem = ({ title, description, itemClass, image }) => {
+  const imageUrl = image ? urlForImage(image).url() : null;
+
+  const backgroundImageStyle = {
+    backgroundImage: imageUrl ? `url(${imageUrl})` : "none",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
+
   return (
-    <div className={`${itemClass} item`}>
+    <div className={`${styles[itemClass]}`} style={backgroundImageStyle}>
       <div className={styles.item_text}>
         <h3>{title}</h3>
         <p>{description}</p>

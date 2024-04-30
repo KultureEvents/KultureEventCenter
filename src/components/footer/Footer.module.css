@@ -58,46 +58,6 @@
   background-size: cover;
 }
 
-.footer__carousel-item.item-1 {
-  background-image: url("../../../public/images/footer-1.png");
-}
-.item-2 {
-  background-image: url("../../../public/images/footer-2.png");
-}
-.item-3 {
-  background-image: url("../../../public/images/footer-3.png");
-}
-.item-4 {
-  background-image: url("../../../public/images/footer-4.png");
-}
-.item-5 {
-  background-image: url("../../../public/images/footer-5.png");
-}
-.item-6 {
-  background-image: url("../../../public/images/footer-6.png");
-}
-.item-7 {
-  background-image: url("../../../public/images/footer-7.png");
-}
-.item-8 {
-  background-image: url("../../../public/images/footer-8.png");
-}
-.item-9 {
-  background-image: url("../../../public/images/footer-9.png");
-}
-.item-10 {
-  background-image: url("../../../public/images/footer-10.png");
-}
-.item-11 {
-  background-image: url("../../../public/images/footer-11.png");
-}
-.item-12 {
-  background-image: url("../../../public/images/footer-12.png");
-}
-.item-13 {
-  background-image: url("../../../public/images/footer-13.png");
-}
-
 .footer__links {
   display: flex;
   justify-content: space-between;

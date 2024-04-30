@@ -5,13 +5,28 @@ import Packages from "@/components/packages/Packages";
 import CTA from "@/components/cta/CTA";
 import HomeService from "@/appSections/homeSections/homeService/HomeService";
 import EventHero from "@/appSections/eventSection/EventHero";
+import { client } from "@/sanityClient/sanity";
 
-const EventHallPage = () => {
+export const getHomeImage = async () => {
+  const groqQuery = `*[_type == "homePage"][0]{
+      "homeServiceData": homeServiceData,
+    }`;
+
+  const data = client.fetch(groqQuery);
+
+  return data;
+};
+
+const EventHallPage = async () => {
+  const homeImage = await getHomeImage();
   return (
     <>
       <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
       <EventHero />
-      <HomeService title={"Services We Offer"} />
+      <HomeService
+        homeServiceData={homeImage?.homeServiceData}
+        title={"Services We Offer"}
+      />
       <Packages />
       <CTA
         className={"cta__link_events"}

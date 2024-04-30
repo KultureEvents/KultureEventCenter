@@ -2,40 +2,12 @@
 import React, { useState } from "react";
 import styles from "./Gallery.module.css";
 import Image from "next/image";
-import {
-  galleryImg1,
-  galleryImg2,
-  galleryImg3,
-  galleryImg4,
-  galleryImg5,
-  galleryImg6,
-  galleryImg7,
-  galleryImg8,
-  galleryImg9,
-  galleryImg10,
-  galleryImg11,
-  galleryImg12,
-} from "../../../public/images";
 import { Arrow1, Arrow2 } from "../../../public/svg";
 
-const Gallery = () => {
-  const galleryImages = [
-    galleryImg1,
-    galleryImg2,
-    galleryImg3,
-    galleryImg4,
-    galleryImg5,
-    galleryImg6,
-    galleryImg7,
-    galleryImg8,
-    galleryImg9,
-    galleryImg10,
-    galleryImg11,
-    galleryImg12,
-  ];
-
+const Gallery = ({ galleryImages }) => {
+  const actualGalleryImages = galleryImages[0]?.galleryImages;
   const itemsPerPage = 6;
-  const totalPages = Math.ceil(galleryImages.length / itemsPerPage);
+  const totalPages = Math.ceil(actualGalleryImages?.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleNextPage = () => {
@@ -47,14 +19,17 @@ const Gallery = () => {
   };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = Math.min(startIndex + itemsPerPage, galleryImages.length);
-  const displayedImages = galleryImages.slice(startIndex, endIndex);
+  const endIndex = Math.min(
+    startIndex + itemsPerPage,
+    actualGalleryImages?.length
+  );
+  const displayedImages = actualGalleryImages?.slice(startIndex, endIndex);
 
   return (
     <section className={`${styles.gallery} section`}>
       <div className={`${styles.gallery__container} container`}>
         <div className={`${styles.gallery__container_contents}`}>
-          {displayedImages.map((img, index) => (
+          {displayedImages?.map((img, index) => (
             <div key={index} className={styles.gallery__contents_item}>
               <Image src={img} alt="Gallery Image" width={448} height={488} />
             </div>
