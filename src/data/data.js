@@ -252,6 +252,13 @@ export const packageDetails = {
   ],
 };
 
+// Define unique identifiers (keys) for each addon
+const addonKeys = {
+  sprinterVan: "sprinterVan",
+  throneChair: "throneChair",
+  redCarpet: "redCarpet",
+};
+
 export const bookingDetails = [
   {
     name: "Silver",
@@ -259,16 +266,19 @@ export const bookingDetails = [
     images: [PackagesImg1, PackagesImg2],
     addOn: [
       {
+        key: addonKeys.sprinterVan,
         star: <SilverStar />,
         text: "Sprinter Van round trip",
         fee: "$300",
       },
       {
+        key: addonKeys.throneChair,
         star: <SilverStar />,
         text: "Throne Chair (x1)",
         fee: "$100",
       },
       {
+        key: addonKeys.redCarpet,
         star: <SilverStar />,
         text: "Red carpet with gold stanchions",
         fee: "$100",
@@ -281,16 +291,19 @@ export const bookingDetails = [
     images: [PackagesImg3, PackagesImg4],
     addOn: [
       {
+        key: addonKeys.sprinterVan,
         star: <GoldStar />,
         text: "Sprinter Van round trip",
         fee: "$300",
       },
       {
+        key: addonKeys.throneChair,
         star: <GoldStar />,
         text: "Throne Chair (x1)",
         fee: "$100",
       },
       {
+        key: addonKeys.redCarpet,
         star: <GoldStar />,
         text: "Red carpet with gold stanchions",
         fee: "$100",
@@ -303,16 +316,19 @@ export const bookingDetails = [
     images: [PackagesImg5, PackagesImg6],
     addOn: [
       {
+        key: addonKeys.sprinterVan,
         star: <PlatinumStar />,
         text: "Sprinter Van round trip",
         fee: "$500",
       },
       {
+        key: addonKeys.throneChair,
         star: <PlatinumStar />,
         text: "Throne Chair (x1)",
         fee: "$300",
       },
       {
+        key: addonKeys.redCarpet,
         star: <PlatinumStar />,
         text: "Red carpet with gold stanchions",
         fee: "$200",
@@ -320,6 +336,7 @@ export const bookingDetails = [
     ],
   },
 ];
+
 
 export const singleEventData = [
   {

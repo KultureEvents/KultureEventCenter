@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./page.module.css";
 import PageBanner from "@/components/pageBanner/PageBanner";
 import Packages from "@/components/packages/Packages";
 import CTA from "@/components/cta/CTA";

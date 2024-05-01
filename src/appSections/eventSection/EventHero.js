@@ -9,7 +9,7 @@ const EventHero = () => {
         <div className={styles.eventHero__container_link_1}>
           <div className={styles.link__text}>
             <h3>Kulture Event I (Capacity 250 Audience)</h3>
-            <Link href={`/events/I`}>
+            <Link href={`/venues/I`}>
               <span>View Here</span>
             </Link>
           </div>
@@ -18,7 +18,7 @@ const EventHero = () => {
         <div className={styles.eventHero__container_link_2}>
           <div className={styles.link__text}>
             <h3>Kulture Event II (Capacity 60 Audience)</h3>
-            <Link href={`/events/II`}>
+            <Link href={`/venues/II`}>
               <span>View Here</span>
             </Link>
           </div>
