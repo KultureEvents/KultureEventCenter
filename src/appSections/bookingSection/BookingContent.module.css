@@ -75,9 +75,15 @@
           }
         }
       }
+      .package__image_wrapper_full {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        grid-template-columns: 1fr;
+      }
 
       & .package__image_wrapper {
-        display: flex;
+        display: grid;
         align-items: center;
         gap: 18px;
         align-self: stretch;
@@ -183,6 +189,12 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.addonImage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .goldTitle {

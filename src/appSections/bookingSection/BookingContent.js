@@ -16,6 +16,7 @@ import {
 const BookingContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAddons, setSelectedAddons] = useState([]);
+  const [isChecked, setIsChecked] = useState(false); // State to track checkbox status
 
   const searchParams = useSearchParams();
   const selectedPackage = searchParams.get("package");
@@ -30,12 +31,16 @@ const BookingContent = () => {
     if (!selectedAddons.includes(addonKey)) {
       // Add the addon to the selectedAddons array
       setSelectedAddons([...selectedAddons, addonKey]);
+      // Update isChecked state when an addon is selected
+      setIsChecked(true);
     } else {
       // Remove the addon from the selectedAddons array
       const updatedAddons = selectedAddons.filter(
         (selected) => selected !== addonKey
       );
       setSelectedAddons(updatedAddons);
+      // Update isChecked state when an addon is deselected
+      setIsChecked(updatedAddons.length > 0); // Set to true if any addons are selected
     }
   };
 
@@ -59,7 +64,13 @@ const BookingContent = () => {
               </p>
             </div>
 
-            <div className={styles.package__image_wrapper}>
+            <div
+              className={
+                isChecked
+                  ? styles.package__image_wrapper
+                  : styles.package__image_wrapper_full
+              }
+            >
               {/* Render default package images or addon images based on selection */}
               {selectedAddons.length === 0
                 ? // Display default package images

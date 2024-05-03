@@ -1,6 +1,6 @@
 export default {
   name: 'event',
-  title: 'Event',
+  title: 'Event-Venues',
   type: 'document',
   fields: [
     {
@@ -8,7 +8,7 @@ export default {
       title: 'Title',
       type: 'string',
       description: 'Title of the event hall',
-    //   validation: (Rule) => Rule.required(),
+      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,21 +19,21 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-    //   validation: (Rule) => Rule.required(),
+      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
       type: 'text',
       description: 'Subtitle or description of the event hall',
-    //   validation: (Rule) => Rule.required(),
+      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'floorPlanInfo',
       title: 'Floor Plan Info',
       type: 'text',
       description: 'Information about the floor plan (e.g., square footage)',
-    //   validation: (Rule) => Rule.required(),
+      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'floorPlanImage',
@@ -43,7 +43,7 @@ export default {
       options: {
         hotspot: true, // Enable hotspot for image cropping
       },
-    //   validation: (Rule) => Rule.required(),
+      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'images',
@@ -54,7 +54,7 @@ export default {
       options: {
         layout: 'grid',
       },
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     },
   ],
 }

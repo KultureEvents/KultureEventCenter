@@ -2,27 +2,30 @@ import React from "react";
 import styles from "./EventHero.module.css";
 import Link from "next/link";
 
-const EventHero = () => {
+const EventHero = ({ venuesData }) => {
   return (
     <section className={`${styles.eventHero} section flex`}>
       <div className={`${styles.eventHero__container} container`}>
-        <div className={styles.eventHero__container_link_1}>
-          <div className={styles.link__text}>
-            <h3>Kulture Event I (Capacity 250 Audience)</h3>
-            <Link href={`/venues/I`}>
-              <span>View Here</span>
-            </Link>
-          </div>
-        </div>
+        {venuesData.map((venue) => {
+          let containerClassName = "eventHero__container_link";
 
-        <div className={styles.eventHero__container_link_2}>
-          <div className={styles.link__text}>
-            <h3>Kulture Event II (Capacity 60 Audience)</h3>
-            <Link href={`/venues/II`}>
-              <span>View Here</span>
-            </Link>
-          </div>
-        </div>
+          if (venue.slug?.current === "kulture-event-hall-I") {
+            containerClassName += ` ${styles.eventHero__container_link_1}`;
+          } else if (venue.slug?.current === "kulture-event-hall-II") {
+            containerClassName += ` ${styles.eventHero__container_link_2}`;
+          }
+
+          return (
+            <div key={venue._id} className={containerClassName}>
+              <div className={styles.link__text}>
+                <h3>{venue.title}</h3>
+                <Link href={`/venues/${venue.slug?.current}`}>
+                  <span>View Here</span>
+                </Link>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <div className={styles.eventHero__contents_texts}>

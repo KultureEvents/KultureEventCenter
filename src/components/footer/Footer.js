@@ -21,7 +21,7 @@ export const getFooterImages = async () => {
 import { Facebook, Instagram, Logo, Tiktok } from "../../../public/svg";
 const Footer = async () => {
   const footerImages = await getFooterImages();
-  const carouselItems = footerImages[0].footerImages;
+  const carouselItems = footerImages[0]?.footerImages;
   return (
     <footer className={`${styles.footer} section`}>
       <div className={styles.footer__container}>

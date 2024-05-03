@@ -1,62 +1,91 @@
-"use client";
+// "use client";
 
 import React from "react";
 import styles from "./page.module.css";
 
 import CTA from "@/components/cta/CTA";
 import Image from "next/image";
-import { singleEventData } from "@/data/data";
 
 import PageBanner from "@/components/pageBanner/PageBanner";
 import { ArrowCircle } from "../../../../public/svg";
+import { client } from "@/sanityClient/sanity";
+import { urlForImage } from "@/sanityClient/sanityImageUrl";
 
-const SingleEventHall = ({ params }) => {
-  const scrollToSection = () => {
-    const section = document.getElementById("floorPlan");
-    const offsetTop = section.offsetTop;
-    window.scrollTo({
-      top: offsetTop,
-      behavior: "smooth",
-    });
+export const getSingleVenueData = async (slug) => {
+  const query = `*[_type =='event' && slug.current == "${slug}"]{
+    "currentSlug": slug.current,
+    _id,
+    title,
+    slug,
+    subtitle,
+    floorPlanInfo,
+    floorPlanImage,
+    images[]{
+      asset->{
+        url
+      }
+    }
+  }[0]`;
+
+  const data = await client.fetch(query);
+
+  // Extracting URLs from the 'images' array
+  const imageUrls = data.images.map((image) => image.asset.url);
+
+  // Replace the 'images' array with the extracted URLs
+  const updatedData = {
+    ...data,
+    images: imageUrls,
   };
 
-  const eventData = singleEventData.find((data) => data.slug === params.slug);
+  return updatedData;
+};
 
-  if (!eventData) {
-    // Handle if the data for the current route is not found
-    return <div>Event data not found for this route.</div>;
-  }
-  const { slug, title, subtitle, floorPlanInfo, floorPlanImage, images } =
-    eventData;
+
+const SingleEventHall = async ({ params }) => {
+  const data = await getSingleVenueData(params.slug);
+
+  // const scrollToSection = () => {
+  //   const section = document.getElementById("floorPlan");
+  //   const offsetTop = section.offsetTop;
+  //   window.scrollTo({
+  //     top: offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  const { title, subtitle, floorPlanInfo, floorPlanImage, images } = data;
+  const imageUrl = urlForImage(floorPlanImage).url();
+
   return (
     <>
       <PageBanner
         backgroundImage="/images/single-banner.png"
-        title={`KULTURE EVENT ${params.slug}`}
+        title={`KULTURE EVENT ${
+          params.slug === "kulture-event-hall-I" ? "I" : "II"
+        }`}
       />
 
       <section className={`${styles.eventInfo} section`}>
         <div className={`${styles.eventInfo__container} container`}>
-          <h3 className={styles.title}>{title}</h3>
+          <h2 className={styles.title}>{title}</h2>
           <p className={styles.subtitle}>{subtitle}</p>
           <p className={styles.floor_plan}>{floorPlanInfo}</p>
 
           <div className={styles.info}>
             <p>View Our Floor Plans Below</p>
-            <ArrowCircle onClick={scrollToSection} />
+            <ArrowCircle />
           </div>
         </div>
       </section>
 
       <section className={`${styles.eventFloor} section`} id="floorPlan">
         <div className={`${styles.eventFloor__container} container`}>
-          <h2>Kulture {slug} Floor Plan</h2>
-          <Image
-            src={floorPlanImage}
-            alt="floor plan"
-            width={1248}
-            height={267}
-          />
+          <h2>
+            Kulture {`${params.slug === "kulture-event-hall-I" ? "I" : "II"}`}{" "}
+            Floor Plan
+          </h2>
+          <Image src={imageUrl} alt="floor plan" width={1248} height={267} />
         </div>
       </section>
 

@@ -16,12 +16,21 @@ export const getHomeImage = async () => {
   return data;
 };
 
+export const getEventVenues = async () => {
+  const groqQuery = `*[_type == "event"]`;
+
+  const data = client.fetch(groqQuery);
+
+  return data;
+};
+
 const EventHallPage = async () => {
   const homeImage = await getHomeImage();
+  const venuesData = await getEventVenues();
   return (
     <>
       <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
-      <EventHero />
+      <EventHero venuesData={venuesData} />
       <HomeService
         homeServiceData={homeImage?.homeServiceData}
         title={"Services We Offer"}
