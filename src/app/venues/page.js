@@ -6,6 +6,8 @@ import HomeService from "@/appSections/homeSections/homeService/HomeService";
 import EventHero from "@/appSections/eventSection/EventHero";
 import { client } from "@/sanityClient/sanity";
 
+export const revalidate = 10; // revalidate at most 10 seconds
+
 export const getHomeImage = async () => {
   const groqQuery = `*[_type == "homePage"][0]{
       "homeServiceData": homeServiceData,

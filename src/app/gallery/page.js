@@ -5,6 +5,8 @@ import CTA from "@/components/cta/CTA";
 import Gallery from "@/appSections/gallerySection/Gallery";
 import { client } from "@/sanityClient/sanity";
 
+export const revalidate = 10; // revalidate at most 10 seconds
+
 export const getGalleryImages = async () => {
   try {
     const groqQuery = `*[_type == "gallery"]{
@@ -12,6 +14,7 @@ export const getGalleryImages = async () => {
     }`;
 
     const data = await client.fetch(groqQuery);
+
 
     return data;
   } catch (error) {

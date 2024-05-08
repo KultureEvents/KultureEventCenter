@@ -11,6 +11,8 @@ import { ArrowCircle } from "../../../../public/svg";
 import { client } from "@/sanityClient/sanity";
 import { urlForImage } from "@/sanityClient/sanityImageUrl";
 
+export const revalidate = 10; // revalidate at most 10 seconds
+
 export const getSingleVenueData = async (slug) => {
   const query = `*[_type =='event' && slug.current == "${slug}"]{
     "currentSlug": slug.current,
@@ -40,7 +42,6 @@ export const getSingleVenueData = async (slug) => {
 
   return updatedData;
 };
-
 
 const SingleEventHall = async ({ params }) => {
   const data = await getSingleVenueData(params.slug);

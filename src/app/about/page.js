@@ -7,7 +7,7 @@ import AboutHero from "@/appSections/aboutSections/aboutHero/AboutHero";
 import AboutInfo from "@/appSections/aboutSections/aboutInfo/AboutInfo";
 import { client } from "@/sanityClient/sanity";
 
-export const revalidate = 30; // revalidate at most 30 seconds
+export const revalidate = 10; // revalidate at most 10 seconds
 
 export const getHomeImage = async () => {
   const groqQuery = `*[_type == "homePage"][0]{

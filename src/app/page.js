@@ -9,6 +9,8 @@ import HomeService from "@/appSections/homeSections/homeService/HomeService";
 import Packages from "@/components/packages/Packages";
 import { client } from "@/sanityClient/sanity";
 
+export const revalidate = 10; // revalidate at most 10 seconds
+
 export const getHomeImage = async () => {
   const groqQuery = `*[_type == "homePage"][0]{
       "homeHeroImages": homeHeroImages[].asset->url,
