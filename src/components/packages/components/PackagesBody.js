@@ -45,8 +45,8 @@ const PackagesBody = ({ currentPackage }) => (
         <p>Package Fee:</p>
         {/* Price based on the current package */}
         {currentPackage === "Silver" && <span>$2,150</span>}
-        {currentPackage === "Gold" && <span>$3,500</span>}
-        {currentPackage === "Platinum" && <span>$5,000</span>}
+        {currentPackage === "Gold" && <span>$2,700</span>}
+        {currentPackage === "Platinum" && <span>$2,995</span>}
       </div>
     </div>
   </div>

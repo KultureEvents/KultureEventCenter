@@ -1,5 +1,14 @@
 import { SilverStar, GoldStar, PlatinumStar } from "../../public/svg";
 
+import {
+  PackagesImg1,
+  PackagesImg2,
+  PackagesImg3,
+  PackagesImg4,
+  PackagesImg5,
+  PackagesImg6,
+} from "../../public/images";
+
 //Navbar Links
 export const NavLinks = [
   {
@@ -219,3 +228,88 @@ export const packageDetails = {
     },
   ],
 };
+
+// Define unique identifiers (keys) for each addon
+const addonKeys = {
+  sprinterVan: "sprinterVan",
+  throneChair: "throneChair",
+  redCarpet: "redCarpet",
+};
+
+export const bookingDetails = [
+  {
+    name: "Silver",
+    fee: "$2,150",
+    images: [PackagesImg1, PackagesImg2],
+    addOn: [
+      {
+        key: addonKeys.sprinterVan,
+        star: <SilverStar />,
+        text: "Sprinter Van round trip",
+        fee: "$300",
+      },
+      {
+        key: addonKeys.throneChair,
+        star: <SilverStar />,
+        text: "Throne Chair (x1)",
+        fee: "$100",
+      },
+      {
+        key: addonKeys.redCarpet,
+        star: <SilverStar />,
+        text: "Red carpet with gold stanchions",
+        fee: "$100",
+      },
+    ],
+  },
+  {
+    name: "Gold",
+    fee: "$2,700",
+    images: [PackagesImg3, PackagesImg4],
+    addOn: [
+      {
+        key: addonKeys.sprinterVan,
+        star: <GoldStar />,
+        text: "Sprinter Van round trip",
+        fee: "$300",
+      },
+      {
+        key: addonKeys.throneChair,
+        star: <GoldStar />,
+        text: "Throne Chair (x1)",
+        fee: "$100",
+      },
+      {
+        key: addonKeys.redCarpet,
+        star: <GoldStar />,
+        text: "Red carpet with gold stanchions",
+        fee: "$100",
+      },
+    ],
+  },
+  {
+    name: "Platinum",
+    fee: "$2,995",
+    images: [PackagesImg5, PackagesImg6],
+    addOn: [
+      {
+        key: addonKeys.sprinterVan,
+        star: <PlatinumStar />,
+        text: "Sprinter Van round trip",
+        fee: "$500",
+      },
+      {
+        key: addonKeys.throneChair,
+        star: <PlatinumStar />,
+        text: "Throne Chair (x1)",
+        fee: "$300",
+      },
+      {
+        key: addonKeys.redCarpet,
+        star: <PlatinumStar />,
+        text: "Red carpet with gold stanchions",
+        fee: "$200",
+      },
+    ],
+  },
+];

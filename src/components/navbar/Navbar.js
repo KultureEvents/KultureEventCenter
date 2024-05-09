@@ -13,6 +13,7 @@ import {
   Close,
   Open,
   Tiktok,
+  YouTube,
 } from "../../../public/svg";
 
 const Navbar = () => {
@@ -69,6 +70,11 @@ const Navbar = () => {
                   target="_blank"
                 >
                   <Facebook />
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com" target="_blank">
+                  <YouTube />
                 </Link>
               </li>
             </ul>
@@ -137,6 +143,11 @@ const Navbar = () => {
                     target="_blank"
                   >
                     <Facebook />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.youtube.com" target="_blank">
+                    <YouTube />
                   </Link>
                 </li>
               </ul>

@@ -18,7 +18,13 @@ export const getFooterImages = async () => {
   }
 };
 
-import { Facebook, Instagram, Logo, Tiktok } from "../../../public/svg";
+import {
+  Facebook,
+  Instagram,
+  Logo,
+  Tiktok,
+  YouTube,
+} from "../../../public/svg";
 const Footer = async () => {
   const footerImages = await getFooterImages();
   const carouselItems = footerImages[0]?.footerImages;
@@ -68,6 +74,11 @@ const Footer = async () => {
                 target="_blank"
               >
                 <Facebook />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://www.youtube.com" target="_blank">
+                <YouTube />
               </Link>
             </li>
           </ul>

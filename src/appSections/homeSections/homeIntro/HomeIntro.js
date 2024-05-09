@@ -53,7 +53,7 @@ const HomeIntro = ({ homeIntroImages }) => {
               View Our Packages
             </button>
             <Link
-              href="/events"
+              href="/venues"
               className={`${styles.link} ${styles.buttonPrimary}`}
             >
               <span>View Our Venues</span>
