@@ -22,6 +22,7 @@ export const getSingleVenueData = async (slug) => {
     subtitle,
     floorPlanInfo,
     floorPlanImage,
+    youtubeVideo,
     images[]{
       asset->{
         url
@@ -55,7 +56,14 @@ const SingleEventHall = async ({ params }) => {
   //   });
   // };
 
-  const { title, subtitle, floorPlanInfo, floorPlanImage, images } = data;
+  const {
+    title,
+    subtitle,
+    floorPlanInfo,
+    floorPlanImage,
+    images,
+    youtubeVideo,
+  } = data;
   const imageUrl = urlForImage(floorPlanImage).url();
 
   return (
@@ -87,6 +95,28 @@ const SingleEventHall = async ({ params }) => {
             Floor Plan
           </h2>
           <Image src={imageUrl} alt="floor plan" width={1248} height={267} />
+        </div>
+      </section>
+
+      <section className={`${styles.eventVideo} section`}>
+        <div className={`${styles.eventVideo__container} container`}>
+          <h2 className={styles.title}>
+            Take A Virtual Tour Of Kulture Event Center{" "}
+            {params.slug === "kulture-event-hall-I" ? "I" : "II"}
+          </h2>
+
+          <div className={styles.video}>
+            <iframe
+              width="1200"
+              height="500"
+              src={youtubeVideo}
+              title="Take A Virtual Tour Of Kulture Event Center"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
 

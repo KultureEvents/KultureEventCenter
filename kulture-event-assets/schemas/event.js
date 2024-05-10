@@ -8,7 +8,6 @@ export default {
       title: 'Title',
       type: 'string',
       description: 'Title of the event hall',
-      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -19,21 +18,18 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
       type: 'text',
       description: 'Subtitle or description of the event hall',
-      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'floorPlanInfo',
       title: 'Floor Plan Info',
       type: 'text',
       description: 'Information about the floor plan (e.g., square footage)',
-      //   validation: (Rule) => Rule.required(),
     },
     {
       name: 'floorPlanImage',
@@ -41,9 +37,22 @@ export default {
       type: 'image',
       description: 'Image of the floor plan',
       options: {
-        hotspot: true, // Enable hotspot for image cropping
+        hotspot: true,
       },
-      //   validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'youtubeVideo',
+      title: 'YouTube Video',
+      type: 'string',
+      description:
+        'YouTube video link for the event hall (e.g., https://www.youtube.com/watch?v=VIDEO_ID)  NOTE: Use the "Share" link from YouTube and copy the iframe URL in the src attribute.',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+          allowRelative: false,
+          message:
+            'Please enter a valid URL for the YouTube video. NOTE: Use the "Share" link from YouTube and copy the iframe URL in the src attribute.',
+        }),
     },
     {
       name: 'images',
@@ -54,7 +63,6 @@ export default {
       options: {
         layout: 'grid',
       },
-      // validation: (Rule) => Rule.required(),
     },
   ],
 }
