@@ -262,6 +262,7 @@ export const bookingDetails = [
       },
     ],
   },
+
   {
     name: "Gold",
     fee: "$2,700",
@@ -287,6 +288,7 @@ export const bookingDetails = [
       },
     ],
   },
+
   {
     name: "Platinum",
     fee: "$2,995",
@@ -312,4 +314,5 @@ export const bookingDetails = [
       },
     ],
   },
+  
 ];
