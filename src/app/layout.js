@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       </body>
 
       {/* Include the first external script */}
+
       <Script
         src="https://embed.tawk.to/66439ce79a809f19fb30e271/1hts1pq70"
         strategy="afterInteractive" // Load script after hydration
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
         crossOrigin="*"
       />
 
+{/* TODO:  I have to to do this  */}
       {/* Include the second external script */}
+
       {/* <Script
         src="https://utt.impactcdn.com/P-A5462282-12a4-411d-8ac4-fbf35198c56a1.js"
         strategy="afterInteractive"
