@@ -73,7 +73,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.youtube.com" target="_blank">
+                <Link
+                  href="https://youtube.com/@kultureeventsatl?si=G8ys3N2OXLI4p6Vd"
+                  target="_blank"
+                >
                   <YouTube />
                 </Link>
               </li>
@@ -146,7 +149,10 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.youtube.com" target="_blank">
+                  <Link
+                    href="https://youtube.com/@kultureeventsatl?si=G8ys3N2OXLI4p6Vd"
+                    target="_blank"
+                  >
                     <YouTube />
                   </Link>
                 </li>

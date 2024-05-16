@@ -26,12 +26,12 @@ const ContactHero = () => {
         <div className={styles.contactHero__container_image}>
           <Image src={contactHeroImg} alt="about us" width={608} height={568} />
 
-          <button
+          {/* <button
             type="button"
             className={styles.contactHero__container_image_btn}
           >
             Contact Us
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

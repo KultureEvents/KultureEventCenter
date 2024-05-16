@@ -13,7 +13,7 @@ const ScheduleMeeting = () => {
   return (
     <section className={`${styles.meeting} section`}>
       <InlineWidget
-        url="https://calendly.com/vectortransaction"
+        url="https://calendly.com/info-thcx/kultureevents"
         className={`${styles.meeting__container} container`}
       />
     </section>

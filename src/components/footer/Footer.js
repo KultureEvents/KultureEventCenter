@@ -78,7 +78,10 @@ const Footer = async () => {
               </Link>
             </li>
             <li>
-              <Link href="https://www.youtube.com" target="_blank">
+              <Link
+                href="https://youtube.com/@kultureeventsatl?si=G8ys3N2OXLI4p6Vd"
+                target="_blank"
+              >
                 <YouTube />
               </Link>
             </li>
@@ -98,6 +101,7 @@ const Footer = async () => {
             href="https://www.radiksez.com/"
             className={styles["footer__link-text"]}
             target="_blank"
+            style={{ color: "#236f5e", textDecoration: "underline" }}
           >
             DESIGN INSPIRED BY RADIKSEZ
           </Link>

@@ -27,7 +27,6 @@ export default function RootLayout({ children }) {
         crossOrigin="*"
       />
 
-{/* TODO:  I have to to do this  */}
       {/* Include the second external script */}
 
       {/* <Script
