@@ -6,6 +6,7 @@ import { client } from "@/sanityClient/sanity";
 export const getFooterImages = async () => {
   try {
     const groqQuery = `*[_type == "footer"]{
+      "Title": "Footer Images",
       "footerImages": footerImages[].asset->url
     }`;
 

@@ -45,7 +45,7 @@ const EventHallPage = async () => {
           "We are experts in flawless event planning, providing impeccable service and warm hospitality to all of our guests. We work with you every step of the way to ensure that your event is executed seamlessly, creating unforgettable experiences for you and your guests. Our team is here to help you achieve your vision and make your event a success."
         }
         linkText={"Schedule For Facility Inspection"}
-        link={"/contact"}
+        link={"/schedule-meeting"}
       />
     </>
   );

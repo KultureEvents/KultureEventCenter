@@ -5,9 +5,9 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'kulture-event-assets',
+  title: 'KultureEvents',
 
-  projectId: 'w29m9i9p',
+  projectId: 'trhqtvwv',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

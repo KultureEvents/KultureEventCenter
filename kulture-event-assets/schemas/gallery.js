@@ -4,6 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      description: 'These are the gallery images.',
+    },
+    {
       name: 'galleryImages',
       title: 'galleryImages',
       type: 'array',

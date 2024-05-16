@@ -4,6 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      description: 'These images will be displayed in the footer of the website.',
+    },
+    {
       name: 'footerImages',
       title: 'footerImages',
       type: 'array',
