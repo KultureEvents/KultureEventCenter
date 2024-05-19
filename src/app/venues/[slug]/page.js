@@ -22,7 +22,6 @@ export const getSingleVenueData = async (slug) => {
     subtitle,
     floorPlanInfo,
     floorPlanImage,
-    youtubeVideo,
     images[]{
       asset->{
         url
@@ -105,7 +104,7 @@ const SingleEventHall = async ({ params }) => {
             {params.slug === "kulture-event-hall-I" ? "I" : "II"}
           </h2>
 
-          <div className={styles.video}>
+          {/* <div className={styles.video}>
             <iframe
               width="1200"
               height="500"
@@ -116,7 +115,7 @@ const SingleEventHall = async ({ params }) => {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
-          </div>
+          </div> */}
         </div>
       </section>
 
