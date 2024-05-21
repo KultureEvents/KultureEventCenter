@@ -3,6 +3,7 @@ import styles from "./HomeService.module.css";
 import { urlForImage } from "@/sanityClient/sanityImageUrl";
 
 const HomeService = ({ title, homeServiceData }) => {
+ 
   return (
     <section className={`${styles.homeService} section`}>
       <div className={`${styles.homeService__container} container flex`}>

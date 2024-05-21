@@ -26,6 +26,7 @@ export const getHomeImage = async () => {
 
 const HomePage = async () => {
   const homeImage = await getHomeImage();
+  console.log(homeImage.homeServiceData);
   return (
     <>
       <HomeHero slides={homeImage?.homeHeroImages} />
