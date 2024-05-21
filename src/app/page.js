@@ -5,7 +5,7 @@ import Testimonial from "@/components/testimonial/Testimonial";
 import Team from "@/components/team/Team";
 import { ImgPlaceholder1 } from "../../public/images";
 import Message from "@/components/message/Message";
-import HomeService from "@/appSections/homeSections/homeService/HomeService";
+// import HomeService from "@/appSections/homeSections/homeService/HomeService";
 import Packages from "@/components/packages/Packages";
 import { client } from "@/sanityClient/sanity";
 
@@ -31,10 +31,10 @@ const HomePage = async () => {
     <>
       <HomeHero slides={homeImage?.homeHeroImages} />
       <HomeIntro homeIntroImages={homeImage?.homeIntroImages} />
-      <HomeService
+      {/* <HomeService
         homeServiceData={homeImage?.homeServiceData}
         title={"Our Event Services"}
-      />
+      /> */}
       <Packages />
       <Testimonial />
       <Team teamImages={homeImage?.teamImages} />
