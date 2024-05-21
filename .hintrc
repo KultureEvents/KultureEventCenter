@@ -8,7 +8,9 @@
       {
         "ignore": [
           "-webkit-text-size-adjust",
-          "width: fit-content"
+          "width: fit-content",
+          "-webkit-overflow-scrolling",
+          "scrollbar-width"
         ]
       }
     ]

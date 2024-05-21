@@ -83,7 +83,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/schedule-meeting" className="navbar-banner__link">
-            <p>Schedule A Facility Inspection</p>
+            <p>Schedule a Facility Tour</p>
             <LongArr />
           </Link>
         </div>
