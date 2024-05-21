@@ -40,8 +40,12 @@
   height: 650px;
   position: relative;
   background-repeat: no-repeat;
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .homeService__contents_item_1,
+  .homeService__contents_item_2,
+  .homeService__contents_item_3 {
     width: 267px;
     height: 348px;
   }
