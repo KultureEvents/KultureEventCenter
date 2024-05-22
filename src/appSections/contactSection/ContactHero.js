@@ -12,14 +12,18 @@ const ContactHero = () => {
           <h2>Contact Us</h2>
 
           <p>
+            <p>ADDRESS:</p>
             2932 Canton Road Marietta, Georgia 30066
             <br />
-            <br /> info@kultureevents.com <br /> Venue Management <br />
-            Larry Boykins
             <br />
+            <p>CONTACT INFORMATION:</p>
+            info@kultureevents.com <br /> Venue Management <br />
+            Larry Boykins
             <br /> Tel: 470-257-7997 <br />
-            <br /> Monday-Friday 9AM-5PM <br />
-            <br /> BUSINESS HOURS: CONTACT INFORMATION: ADDRESS:
+            <br />
+            <p>BUSINESS HOURS:</p>
+            Monday-Sunday 9AM-12AM <br />
+            <br />
           </p>
         </div>
 

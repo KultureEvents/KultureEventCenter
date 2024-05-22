@@ -83,7 +83,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href="/schedule-meeting" className="navbar-banner__link">
-            <p>Schedule a Facility Tour</p>
+            <p>Schedule a Tour</p>
             <LongArr />
           </Link>
         </div>
@@ -160,7 +160,7 @@ const Navbar = () => {
             </div>
 
             <Link href="/schedule-meeting" className="nav__btn-link">
-              Schedule For A Facility Inspection
+              Schedule a Tour
             </Link>
           </div>
 
