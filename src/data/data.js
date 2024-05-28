@@ -44,7 +44,7 @@ export const NavLinks = [
 // packageData
 
 export const packageDetails = {
-  "Hall 1": {
+  "Hall I": {
     Silver: {
       details: [
         { icon: <SilverStar />, text: "6-Hour Venue Rental" },
@@ -105,7 +105,7 @@ export const packageDetails = {
       price: "$2,995",
     },
   },
-  "Hall 2": {
+  "Hall II": {
     Silver: {
       details: [
         { icon: <SilverStar />, text: "6-Hour Venue Rental" },

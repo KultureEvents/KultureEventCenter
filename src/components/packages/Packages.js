@@ -1,4 +1,3 @@
-// Packages.js
 "use client";
 
 import React, { useState } from "react";
@@ -18,7 +17,7 @@ import PackagesBody from "./components/PackagesBody";
 const Packages = () => {
   // State variables
   const [currentPackage, setCurrentPackage] = useState("Silver");
-  const [activeHall, setActiveHall] = useState("Hall 1");
+  const [activeHall, setActiveHall] = useState("Hall I");
 
   const packageImages = {
     Silver: [PackagesImg1, PackagesImg2],
@@ -63,19 +62,19 @@ const Packages = () => {
           <div className={styles.packages__tabs}>
             <button
               className={`${styles.packages__tab} ${
-                activeHall === "Hall 1" ? styles.active : ""
+                activeHall === "Hall I" ? styles.active : ""
               }`}
-              onClick={() => setActiveHall("Hall 1")}
+              onClick={() => setActiveHall("Hall I")}
             >
-              Packages for Hall 1
+              Packages for Hall I
             </button>
             <button
               className={`${styles.packages__tab} ${
-                activeHall === "Hall 2" ? styles.active : ""
+                activeHall === "Hall II" ? styles.active : ""
               }`}
-              onClick={() => setActiveHall("Hall 2")}
+              onClick={() => setActiveHall("Hall II")}
             >
-              Packages for Hall 2
+              Packages for Hall II
             </button>
           </div>
 
