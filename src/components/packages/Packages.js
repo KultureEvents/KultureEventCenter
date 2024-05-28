@@ -1,3 +1,4 @@
+// Packages.js
 "use client";
 
 import React, { useState } from "react";
@@ -69,9 +70,10 @@ const Packages = () => {
               Packages for Hall 1
             </button>
             <button
-              className={`${styles.packages__tab} ${styles.disabledTab}`} // Add a disabled class for styling
+              className={`${styles.packages__tab} ${
+                activeHall === "Hall 2" ? styles.active : ""
+              }`}
               onClick={() => setActiveHall("Hall 2")}
-              disabled
             >
               Packages for Hall 2
             </button>

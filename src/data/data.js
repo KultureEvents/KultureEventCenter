@@ -108,8 +108,8 @@ export const packageDetails = {
   "Hall 2": {
     Silver: {
       details: [
-        { icon: <SilverStar />, text: "4-Hour Venue Rental" },
-        { icon: <SilverStar />, text: "Silver Chiavari Chairs" },
+        { icon: <SilverStar />, text: "6-Hour Venue Rental" },
+        { icon: <SilverStar />, text: "Gold Chiavari Chairs" },
         { icon: <SilverStar />, text: "72 Inch Round Tables" },
         { icon: <SilverStar />, text: "Tablecloths (black)" },
         { icon: <SilverStar />, text: "4 Six-Foot Rectangular Tables" },
@@ -122,12 +122,12 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Food Prep Area Free Ample Parking" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$1,800",
+      price: "$1,650",
     },
     Gold: {
       details: [
-        { icon: <GoldStar />, text: "4-Hour Venue Rental" },
-        { icon: <GoldStar />, text: "Silver Chiavari Chairs" },
+        { icon: <GoldStar />, text: "6-Hour Venue Rental" },
+        { icon: <GoldStar />, text: "Gold Chiavari Chairs" },
         { icon: <GoldStar />, text: "72 Inch Round Tables" },
         { icon: <GoldStar />, text: "Tablecloths (black)" },
         { icon: <GoldStar />, text: "4 Six-Foot Rectangular Tables" },
@@ -139,15 +139,15 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "Use of In-House Bar" },
         { icon: <GoldStar />, text: "Food Prep Area Free Ample Parking" },
         { icon: <GoldStar />, text: "Cleaning (with exception of trash)" },
-        { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
-        { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
+        { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
+        { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$2,400",
+      price: "$2,200",
     },
     Platinum: {
       details: [
-        { icon: <PlatinumStar />, text: "4-Hour Venue Rental" },
-        { icon: <PlatinumStar />, text: "Silver Chiavari Chairs" },
+        { icon: <PlatinumStar />, text: "6-Hour Venue Rental" },
+        { icon: <PlatinumStar />, text: "Gold Chiavari Chairs" },
         { icon: <PlatinumStar />, text: "72 Inch Round Tables" },
         { icon: <PlatinumStar />, text: "Tablecloths (black)" },
         { icon: <PlatinumStar />, text: "4 Six-Foot Rectangular Tables" },
@@ -161,9 +161,9 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
         { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
-        { icon: <SilverStar />, text: "Roundtrip pickup/Dropoff in Benz" },
+        { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Benz" },
       ],
-      price: "$2,750",
+      price: "$2,495",
     },
   },
 };
