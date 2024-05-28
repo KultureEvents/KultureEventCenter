@@ -298,3 +298,39 @@
     }
   }
 }
+
+.packages__tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.packages__tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.packages__tab.active {
+  background-color: var( --other-500);
+  color: #fff;
+}
+
+/* Packages.module.css */
+
+
+
+.packages__tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.disabledTab {
+  pointer-events: none;
+  opacity: 0.6;
+}
+

@@ -1,5 +1,4 @@
 // PackageNavigation.js
-// "use client";
 import React from "react";
 import Link from "next/link";
 import styles from "../Packages.module.css";
@@ -9,17 +8,14 @@ const PackageNavigation = ({
   currentPackage,
   handlePrevPackage,
   handleNextPackage,
+  activeHall, // Accept activeHall as a prop
 }) => {
-  // Initialize useRouter hook
-
   return (
     <>
-      {" "}
       <Link
-        // href={`/bookings/?category=${category}`}
         href={{
           pathname: "/bookings",
-          query: { package: currentPackage },
+          query: { hall: activeHall, package: currentPackage },
         }}
         className={styles.packages__bottom_link}
       >

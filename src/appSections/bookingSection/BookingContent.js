@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./BookingContent.module.css";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -16,33 +16,40 @@ import {
 const BookingContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAddons, setSelectedAddons] = useState([]);
-  const [isChecked, setIsChecked] = useState(false); // State to track checkbox status
+  const [isChecked, setIsChecked] = useState(false);
 
   const searchParams = useSearchParams();
   const selectedPackage = searchParams.get("package");
+  const selectedHall = searchParams.get("hall");
 
-  // Find the selected package details from the bookingDetails array
-  const selectedBookingDetails = bookingDetails.find(
-    (packageDetail) => packageDetail.name === selectedPackage
-  );
+  const [selectedBookingDetails, setSelectedBookingDetails] = useState(null);
 
-  // Handle addon selection
+  useEffect(() => {
+    if (selectedHall && selectedPackage) {
+      const hallDetails = bookingDetails[selectedHall];
+      const packageDetails = hallDetails.find(
+        (packageDetail) => packageDetail.name === selectedPackage
+      );
+      setSelectedBookingDetails(packageDetails);
+    }
+  }, [selectedHall, selectedPackage]);
+
   const handleAddonSelection = (addonKey) => {
     if (!selectedAddons.includes(addonKey)) {
-      // Add the addon to the selectedAddons array
       setSelectedAddons([...selectedAddons, addonKey]);
-      // Update isChecked state when an addon is selected
       setIsChecked(true);
     } else {
-      // Remove the addon from the selectedAddons array
       const updatedAddons = selectedAddons.filter(
         (selected) => selected !== addonKey
       );
       setSelectedAddons(updatedAddons);
-      // Update isChecked state when an addon is deselected
-      setIsChecked(updatedAddons.length > 0); // Set to true if any addons are selected
+      setIsChecked(updatedAddons.length > 0);
     }
   };
+
+  if (!selectedBookingDetails) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <section className={`${styles.booking} section`}>
@@ -53,11 +60,11 @@ const BookingContent = () => {
           <div className={styles.contents__package}>
             <div className={styles.package__title_wrapper}>
               <h3 className={styles.package__title}>
-                {selectedBookingDetails.name} Package
+                {selectedBookingDetails.name} Package for {selectedHall}
               </h3>
               <p>
                 Package Fee:
-                <br />{" "}
+                <br />
                 <span className={styles.package__fee}>
                   {selectedBookingDetails.fee}
                 </span>
@@ -71,10 +78,8 @@ const BookingContent = () => {
                   : styles.package__image_wrapper_full
               }
             >
-              {/* Render default package images or addon images based on selection */}
               {selectedAddons.length === 0
-                ? // Display default package images
-                  selectedBookingDetails.images.map((image, index) => (
+                ? selectedBookingDetails.images.map((image, index) => (
                     <Image
                       key={`default-${index}`}
                       src={image}
@@ -83,8 +88,7 @@ const BookingContent = () => {
                       height={146}
                     />
                   ))
-                : // Display addon images when addons are selected
-                  selectedAddons.map((addonKey, index) => {
+                : selectedAddons.map((addonKey, index) => {
                     switch (addonKey) {
                       case "sprinterVan":
                         return (

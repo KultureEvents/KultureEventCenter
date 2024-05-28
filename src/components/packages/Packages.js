@@ -17,6 +17,7 @@ import PackagesBody from "./components/PackagesBody";
 const Packages = () => {
   // State variables
   const [currentPackage, setCurrentPackage] = useState("Silver");
+  const [activeHall, setActiveHall] = useState("Hall 1");
 
   const packageImages = {
     Silver: [PackagesImg1, PackagesImg2],
@@ -24,13 +25,11 @@ const Packages = () => {
     Platinum: [PackagesImg5, PackagesImg6],
   };
 
-  // Function to handle switching to the next package
   const handleNextPackage = () => {
     if (currentPackage === "Silver") setCurrentPackage("Gold");
     else if (currentPackage === "Gold") setCurrentPackage("Platinum");
   };
 
-  // Function to handle switching to the previous package
   const handlePrevPackage = () => {
     if (currentPackage === "Platinum") setCurrentPackage("Gold");
     else if (currentPackage === "Gold") setCurrentPackage("Silver");
@@ -60,9 +59,30 @@ const Packages = () => {
             </p>
           </div>
 
+          <div className={styles.packages__tabs}>
+            <button
+              className={`${styles.packages__tab} ${
+                activeHall === "Hall 1" ? styles.active : ""
+              }`}
+              onClick={() => setActiveHall("Hall 1")}
+            >
+              Packages for Hall 1
+            </button>
+            <button
+              className={`${styles.packages__tab} ${styles.disabledTab}`} // Add a disabled class for styling
+              onClick={() => setActiveHall("Hall 2")}
+              disabled
+            >
+              Packages for Hall 2
+            </button>
+          </div>
+
           <div className={styles.packages__divider}></div>
 
-          <PackagesBody currentPackage={currentPackage} />
+          <PackagesBody
+            currentPackage={currentPackage}
+            activeHall={activeHall}
+          />
 
           <div className={styles.packages__divider}></div>
 
@@ -71,6 +91,7 @@ const Packages = () => {
               currentPackage={currentPackage}
               handlePrevPackage={handlePrevPackage}
               handleNextPackage={handleNextPackage}
+              activeHall={activeHall} // Pass activeHall to PackageNavigation
             />
           </div>
         </div>

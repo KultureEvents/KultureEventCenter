@@ -1,38 +1,14 @@
-// PackagesBody.js
 import React from "react";
 import styles from "../Packages.module.css";
 import { packageDetails } from "@/data/data";
 
-const PackagesBody = ({ currentPackage }) => (
-  <div className={styles.packages__body}>
-    <h3
-      className={`${styles.packages__body_title} ${
-        currentPackage === "Silver"
-          ? styles.silverTitle
-          : currentPackage === "Gold"
-          ? styles.goldTitle
-          : currentPackage === "Platinum"
-          ? styles.platinumTitle
-          : ""
-      }`}
-    >
-      {currentPackage} Package
-    </h3>
+const PackagesBody = ({ currentPackage, activeHall }) => {
+  const { details, price } = packageDetails[activeHall][currentPackage];
 
-    {/* Package details */}
-    <div className={styles.packages__body_list}>
-      <ul className={styles.packages__body_item}>
-        {packageDetails[currentPackage].map((detail, index) => (
-          <li key={index}>
-            {detail.icon}
-            <span>{detail.text}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Price */}
-      <div
-        className={`${styles.packages__body_price} ${
+  return (
+    <div className={styles.packages__body}>
+      <h3
+        className={`${styles.packages__body_title} ${
           currentPackage === "Silver"
             ? styles.silverTitle
             : currentPackage === "Gold"
@@ -42,14 +18,36 @@ const PackagesBody = ({ currentPackage }) => (
             : ""
         }`}
       >
-        <p>Package Fee:</p>
-        {/* Price based on the current package */}
-        {currentPackage === "Silver" && <span>$2,150</span>}
-        {currentPackage === "Gold" && <span>$2,700</span>}
-        {currentPackage === "Platinum" && <span>$2,995</span>}
+        {currentPackage} Package for {activeHall}
+      </h3>
+
+      <div className={styles.packages__body_list}>
+        <ul className={styles.packages__body_item}>
+          {details.map((detail, index) => (
+            <li key={index}>
+              {detail.icon}
+              <span>{detail.text}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div
+          className={`${styles.packages__body_price} ${
+            currentPackage === "Silver"
+              ? styles.silverTitle
+              : currentPackage === "Gold"
+              ? styles.goldTitle
+              : currentPackage === "Platinum"
+              ? styles.platinumTitle
+              : ""
+          }`}
+        >
+          <p>Package Fee:</p>
+          <span>{price}</span>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default PackagesBody;
