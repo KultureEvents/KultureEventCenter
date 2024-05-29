@@ -8,8 +8,8 @@ const BookingsPage = () => {
     <Suspense
       fallback={
         <div className="flex">
-          <p className="spinner"></p>
-          <span>Loading...</span>
+          {/* <p className="spinner"></p>
+          <span>Loading...</span> */}
         </div>
       }
     >

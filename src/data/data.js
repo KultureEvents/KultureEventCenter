@@ -257,7 +257,7 @@ const addonKeys = {
 };
 
 export const bookingDetails = {
-  "Hall 1": [
+  "Hall I": [
     {
       name: "Silver",
       fee: "$2,150",
@@ -334,7 +334,7 @@ export const bookingDetails = {
       ],
     },
   ],
-  "Hall 2": [
+  "Hall II": [
     {
       name: "Silver",
       fee: "$1,800",

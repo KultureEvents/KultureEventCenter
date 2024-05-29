@@ -2,25 +2,27 @@ import React, { useState } from "react";
 import styles from "./BookingForm.module.css";
 import Link from "next/link";
 
-const BookingForm = () => {
+const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
   // Define state to store form data
-  const [formData, setFormData] = useState({
+  const defaultValues = {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     eventName: "",
     date: "",
     startTime: "",
     endTime: "",
-    size: "",
-    servingAlcohol: "",
-    tour: "",
+    estimatedGroupSize: "",
+    Alcohol: "",
+    scheduleTour: "",
     phoneBooth: "",
     message: "",
     agreement: false,
     news: false,
-  });
+  };
+  const [formData, setFormData] = useState(defaultValues);
+
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
     const val = type === "checkbox" ? checked : value;
@@ -33,12 +35,21 @@ const BookingForm = () => {
   // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Access the form data stored in formData state
-    console.log(formData);
 
-    // Here you can perform further actions like sending the data to a backend
-    // Example:
-    // sendFormDataToServer(formData);
+    // Create a new FormData object
+    const formData = new FormData(event.target);
+
+    // Append additional data
+    formData.append("selectedPackage", selectedPackage);
+    formData.append("packageFee", packageFee);
+    formData.append("selectedAddons", JSON.stringify(selectedAddons));
+
+    // Convert FormData to JSON for demonstration purposes
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
+    console.log("Form Data:", formDataJSON);
   };
 
   return (
@@ -84,11 +95,11 @@ const BookingForm = () => {
           />
           <input
             type="tel"
-            id="phone"
-            name="phone"
+            id="phoneNumber"
+            name="phoneNumber"
             className={styles.form_input}
             placeholder="Phone Number"
-            value={formData.phone}
+            value={formData.phoneNumber}
             onChange={handleInputChange}
             required
           />
@@ -106,58 +117,77 @@ const BookingForm = () => {
           required
         />
         <div className={styles.form_group}>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            className={styles.form_input}
-            placeholder="Desired Date"
-            value={formData.date}
-            onChange={handleInputChange}
-            required
-          />
-          <select
-            id="startTime"
-            name="startTime"
-            className={styles.form_input}
-            value={formData.startTime}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="">Start Time</option>
-            <option value="09:00">09:00 AM</option>
-            <option value="10:00">10:00 AM</option>
-          </select>
-          <select
-            id="endTime"
-            name="endTime"
-            className={styles.form_input}
-            value={formData.endTime}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="">End Time</option>
-            <option value="12:00">12:00 PM</option>
-            <option value="13:00">01:00 PM</option>
-          </select>
+          <div className={styles.form_pair}>
+            <label htmlFor="startTime" className={styles.form_label}>
+              Desired Date
+            </label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              className={styles.form_input}
+              placeholder="Desired Date"
+              value={formData.date}
+              onChange={handleInputChange}
+              required
+              // style={{ padding: "16px 64px" }}
+            />
+          </div>
+
+          <div className={styles.form_pair}>
+            <label htmlFor="startTime" className={styles.form_label}>
+              Start Time
+            </label>
+            <input
+              type="time"
+              id="startTime"
+              name="startTime"
+              className={styles.form_input}
+              value={formData.startTime}
+              onChange={handleInputChange}
+              required
+              // style={{ padding: "16px 64px" }}
+            />
+          </div>
+          {/* <div className={styles.form_group}>
+          </div> */}
+
+          <div className={styles.form_pair}>
+            <label htmlFor="endTime" className={styles.form_label}>
+              End Time
+            </label>
+            <input
+              type="time"
+              id="endTime"
+              name="endTime"
+              className={styles.form_input}
+              value={formData.endTime}
+              onChange={handleInputChange}
+              required
+              // style={{ padding: "16px 64px" }}
+            />
+          </div>
+          {/* <div className={styles.form_group}>
+          </div> */}
         </div>
+
         <input
           type="number"
-          id="size"
-          name="size"
+          id="estimatedGroupSize"
+          name="estimatedGroupSize"
           className={styles.form_input}
           placeholder="Estimated Group Size"
-          value={formData.size}
+          value={formData.estimatedGroupSize}
           onChange={handleInputChange}
           required
         />
 
-        {/* Serving Alcohol, Tour, and Phone Booth selection */}
+        {/* Serving Alcohol, scheduleTour, and Phone Booth selection */}
         <select
-          id="servingAlcohol"
-          name="servingAlcohol"
+          id="Alcohol"
+          name="Alcohol"
           className={styles.form_select}
-          value={formData.servingAlcohol}
+          value={formData.Alcohol}
           onChange={handleInputChange}
           required
         >
@@ -165,11 +195,12 @@ const BookingForm = () => {
           <option value="YES">YES</option>
           <option value="NO">NO</option>
         </select>
+
         <select
-          id="tour"
-          name="tour"
+          id="scheduleTour"
+          name="scheduleTour"
           className={styles.form_select}
-          value={formData.tour}
+          value={formData.scheduleTour}
           onChange={handleInputChange}
           required
         >
@@ -177,6 +208,7 @@ const BookingForm = () => {
           <option value="YES">YES</option>
           <option value="NO">NO</option>
         </select>
+
         <select
           id="phoneBooth"
           name="phoneBooth"
@@ -198,7 +230,6 @@ const BookingForm = () => {
           placeholder="Type Your Message"
           value={formData.message}
           onChange={handleInputChange}
-          required
           rows={5}
         ></textarea>
 
@@ -211,6 +242,7 @@ const BookingForm = () => {
             className="inp-cbx"
             checked={formData.agreement}
             onChange={handleInputChange}
+            required
           />
           <p>
             I agree to the <Link href="/">terms and conditions</Link>

@@ -19,12 +19,22 @@
 }
 .form_group {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 24px;
   align-self: stretch;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+  }
+}
+
+.form_pair {
+  width: 100%;
+  & .form_input {
+    padding: 16px 64px !important;
+    @media screen and (max-width: 768px) {
+    padding: 16px !important;
+    }
   }
 }
 

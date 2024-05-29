@@ -190,7 +190,11 @@ const BookingContent = () => {
               </ul>
             )}
           </div>
-          <BookingForm />
+          <BookingForm
+            selectedPackage={selectedBookingDetails.name}
+            packageFee={selectedBookingDetails.fee}
+            selectedAddons={selectedAddons}
+          />
         </div>
       </div>
     </section>
