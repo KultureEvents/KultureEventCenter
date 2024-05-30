@@ -51,7 +51,7 @@
         gap: 8px;
 
         & h3 {
-          font-size: 27.304px;
+          font-size: 24px;
           font-style: normal;
           font-weight: 700;
           line-height: 125%;
@@ -228,4 +228,15 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.addonImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 150px;
+  }
 }

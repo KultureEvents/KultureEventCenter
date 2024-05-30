@@ -42,7 +42,6 @@ export const NavLinks = [
 ];
 
 // packageData
-
 export const packageDetails = {
   "Hall I": {
     Silver: {
@@ -122,7 +121,7 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Food Prep Area Free Ample Parking" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$1,650",
+      price: "$1,550",
     },
     Gold: {
       details: [
@@ -142,7 +141,7 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$2,200",
+      price: "$2,100",
     },
     Platinum: {
       details: [
@@ -163,92 +162,10 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
         { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Benz" },
       ],
-      price: "$2,495",
+      price: "$2,395",
     },
   },
 };
-
-// Define unique identifiers (keys) for each addon
-
-// export const bookingDetails = [
-//   {
-//     name: "Silver",
-//     fee: "$2,150",
-//     images: [PackagesImg1, PackagesImg2],
-//     addOn: [
-//       {
-//         key: addonKeys.sprinterVan,
-//         star: <SilverStar />,
-//         text: "Sprinter Van round trip",
-//         fee: "$300",
-//       },
-//       {
-//         key: addonKeys.throneChair,
-//         star: <SilverStar />,
-//         text: "Throne Chair (x1)",
-//         fee: "$100",
-//       },
-//       {
-//         key: addonKeys.redCarpet,
-//         star: <SilverStar />,
-//         text: "Red carpet with gold stanchions",
-//         fee: "$100",
-//       },
-//     ],
-//   },
-
-//   {
-//     name: "Gold",
-//     fee: "$2,700",
-//     images: [PackagesImg3, PackagesImg4],
-//     addOn: [
-//       {
-//         key: addonKeys.sprinterVan,
-//         star: <GoldStar />,
-//         text: "Sprinter Van round trip",
-//         fee: "$300",
-//       },
-//       {
-//         key: addonKeys.throneChair,
-//         star: <GoldStar />,
-//         text: "Throne Chair (x1)",
-//         fee: "$100",
-//       },
-//       {
-//         key: addonKeys.redCarpet,
-//         star: <GoldStar />,
-//         text: "Red carpet with gold stanchions",
-//         fee: "$100",
-//       },
-//     ],
-//   },
-
-//   {
-//     name: "Platinum",
-//     fee: "$2,995",
-//     images: [PackagesImg5, PackagesImg6],
-//     addOn: [
-//       {
-//         key: addonKeys.sprinterVan,
-//         star: <PlatinumStar />,
-//         text: "Sprinter Van round trip",
-//         fee: "$500",
-//       },
-//       {
-//         key: addonKeys.throneChair,
-//         star: <PlatinumStar />,
-//         text: "Throne Chair (x1)",
-//         fee: "$300",
-//       },
-//       {
-//         key: addonKeys.redCarpet,
-//         star: <PlatinumStar />,
-//         text: "Red carpet with gold stanchions",
-//         fee: "$200",
-//       },
-//     ],
-//   },
-// ];
 
 const addonKeys = {
   sprinterVan: "sprinterVan",
@@ -337,7 +254,7 @@ export const bookingDetails = {
   "Hall II": [
     {
       name: "Silver",
-      fee: "$1,800",
+      fee: "$1,550",
       images: [PackagesImg1, PackagesImg2],
       addOn: [
         {
@@ -362,7 +279,7 @@ export const bookingDetails = {
     },
     {
       name: "Gold",
-      fee: "$2,400",
+      fee: "$2,100",
       images: [PackagesImg3, PackagesImg4],
       addOn: [
         {
@@ -387,7 +304,7 @@ export const bookingDetails = {
     },
     {
       name: "Platinum",
-      fee: "$2,750",
+      fee: "$2,395",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {

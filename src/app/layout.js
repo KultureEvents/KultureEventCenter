@@ -2,6 +2,8 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Kulture Event Center",
@@ -13,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="body">
+        <ToastContainer position="top-right" autoClose={3000} />
         <Navbar />
         <main>{children}</main>
         <Footer />
@@ -35,7 +38,6 @@ export default function RootLayout({ children }) {
         charSet="UTF-8"
         crossOrigin="*"
       /> */}
-     
     </html>
   );
 }

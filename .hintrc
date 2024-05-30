@@ -10,7 +10,8 @@
           "-webkit-text-size-adjust",
           "width: fit-content",
           "-webkit-overflow-scrolling",
-          "scrollbar-width"
+          "scrollbar-width",
+          "height: fit-content"
         ]
       }
     ]

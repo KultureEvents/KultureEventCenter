@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./BookingForm.module.css";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
+  console.log(selectedAddons);
   // Define state to store form data
   const defaultValues = {
     firstName: "",
@@ -42,7 +44,7 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     // Append additional data
     formData.append("selectedPackage", selectedPackage);
     formData.append("packageFee", packageFee);
-    formData.append("selectedAddons", JSON.stringify(selectedAddons));
+    formData.append("selectedAddons", selectedAddons);
 
     // Convert FormData to JSON for demonstration purposes
     const formDataJSON = {};
@@ -50,6 +52,8 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
       formDataJSON[key] = value;
     });
     console.log("Form Data:", formDataJSON);
+    toast.warning("Sorry! You won't be able to book at the moment, check back");
+    setFormData(defaultValues);
   };
 
   return (
