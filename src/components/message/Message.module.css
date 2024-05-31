@@ -214,3 +214,9 @@
     border: 1px solid #211d1d;
   }
 }
+
+.message__formBtn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666666;
+}

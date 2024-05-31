@@ -4,7 +4,6 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 
 const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
-  console.log(selectedAddons);
   // Define state to store form data
   const defaultValues = {
     firstName: "",
@@ -24,6 +23,8 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     news: false,
   };
   const [formData, setFormData] = useState(defaultValues);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -34,26 +35,83 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     });
   };
 
+  // Function to validate form data
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.firstName) newErrors.firstName = "First name is required";
+    if (!formData.lastName) newErrors.lastName = "Last name is required";
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = "Phone number is required";
+    }
+    if (!formData.agreement) {
+      newErrors.agreement = "You must agree to the terms and conditions";
+    }
+
+    return newErrors;
+  };
+
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Create a new FormData object
-    const formData = new FormData(event.target);
+    // Validate the form
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
 
-    // Append additional data
-    formData.append("selectedPackage", selectedPackage);
-    formData.append("packageFee", packageFee);
-    formData.append("selectedAddons", selectedAddons);
+    // Clear errors if form is valid
+    setErrors({});
 
-    // Convert FormData to JSON for demonstration purposes
-    const formDataJSON = {};
-    formData.forEach((value, key) => {
-      formDataJSON[key] = value;
-    });
-    console.log("Form Data:", formDataJSON);
-    toast.warning("Sorry! You won't be able to book at the moment, check back");
-    setFormData(defaultValues);
+    // Set loading state
+    setLoading(true);
+
+    // Prepare the data to send
+    const dataToSend = {
+      ...formData,
+      selectedPackage,
+      packageFee,
+      selectedAddons,
+    };
+
+    try {
+      const response = await fetch(
+        "https://contact-us-pj4v.onrender.com/api/booking",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      console.log("Server Response:", responseData);
+      toast.success("Your request has been successfully sent!");
+
+      // Reset form after successful submission
+      setFormData(defaultValues);
+    } catch (error) {
+      console.error("There was an error!", error);
+      toast.error(
+        "There was an error sending your request. Please try again later."
+      );
+    } finally {
+      // Reset loading state
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,50 +121,66 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
 
         {/* First Name and Last Name input fields */}
         <div className={styles.form_group}>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className={styles.form_input}
-            placeholder="First Name"
-            value={formData.firstName}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className={styles.form_input}
-            placeholder="Last Name"
-            value={formData.lastName}
-            onChange={handleInputChange}
-            required
-          />
+          <div className={styles.formPair}>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              className={styles.form_input}
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+            {errors.firstName && (
+              <p className={styles.error}>{errors.firstName}</p>
+            )}
+          </div>
+
+          <div className={styles.formPair}>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              className={styles.form_input}
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={handleInputChange}
+            />
+            {errors.lastName && (
+              <p className={styles.error}>{errors.lastName}</p>
+            )}
+          </div>
         </div>
 
         {/* Email and Phone input fields */}
         <div className={styles.form_group}>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className={styles.form_input}
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            className={styles.form_input}
-            placeholder="Phone Number"
-            value={formData.phoneNumber}
-            onChange={handleInputChange}
-            required
-          />
+          <div className={styles.formPair}>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={styles.form_input}
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
+          </div>
+
+          <div className={styles.formPair}>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              className={styles.form_input}
+              placeholder="Phone Number"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+            {errors.phoneNumber && (
+              <p className={styles.error}>{errors.phoneNumber}</p>
+            )}
+          </div>
         </div>
 
         {/* Event Name, Date, Start Time, End Time, and Estimated Group Size input fields */}
@@ -134,7 +208,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
               value={formData.date}
               onChange={handleInputChange}
               required
-              // style={{ padding: "16px 64px" }}
             />
           </div>
 
@@ -150,11 +223,8 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
               value={formData.startTime}
               onChange={handleInputChange}
               required
-              // style={{ padding: "16px 64px" }}
             />
           </div>
-          {/* <div className={styles.form_group}>
-          </div> */}
 
           <div className={styles.form_pair}>
             <label htmlFor="endTime" className={styles.form_label}>
@@ -168,11 +238,8 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
               value={formData.endTime}
               onChange={handleInputChange}
               required
-              // style={{ padding: "16px 64px" }}
             />
           </div>
-          {/* <div className={styles.form_group}>
-          </div> */}
         </div>
 
         <input
@@ -239,18 +306,28 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
 
         {/* Agreement checkbox */}
         <div className={styles.form_agreement}>
-          <input
-            type="checkbox"
-            id="agreement"
-            name="agreement"
-            className="inp-cbx"
-            checked={formData.agreement}
-            onChange={handleInputChange}
-            required
-          />
-          <p>
-            I agree to the <Link href="/">terms and conditions</Link>
-          </p>
+          <div className={styles.formPair}>
+            <div
+              className="flex"
+              style={{ alignSelf: "flex-start", gap: "16px" }}
+            >
+              <input
+                type="checkbox"
+                id="agreement"
+                name="agreement"
+                className="inp-cbx"
+                checked={formData.agreement}
+                onChange={handleInputChange}
+              />
+              <p>
+                I agree to the <Link href="/">terms and conditions</Link>
+              </p>
+            </div>
+
+            {errors.agreement && (
+              <p className={styles.error}>{errors.agreement}</p>
+            )}
+          </div>
         </div>
 
         {/* Newsletter checkbox */}
@@ -267,8 +344,15 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
         </div>
 
         {/* Submit button */}
-        <button type="submit" className={styles.form_btn}>
-          Send a request
+        <button type="submit" className={styles.form_btn} disabled={loading}>
+          {loading ? (
+            <div className="flex">
+              <p className="spinner"></p>
+              <span>Sending...</span>
+            </div>
+          ) : (
+            "Send a request"
+          )}
         </button>
       </form>
     </div>
