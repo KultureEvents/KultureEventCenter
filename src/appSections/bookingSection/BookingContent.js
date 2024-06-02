@@ -17,6 +17,7 @@ const BookingContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
+  const [totalFee, setTotalFee] = useState(0);
 
   const searchParams = useSearchParams();
   const selectedPackage = searchParams.get("package");
@@ -31,20 +32,27 @@ const BookingContent = () => {
         (packageDetail) => packageDetail.name === selectedPackage
       );
       setSelectedBookingDetails(packageDetails);
+      setTotalFee(Number(packageDetails.fee.replace(/[^\d.-]/g, "")));
     }
   }, [selectedHall, selectedPackage]);
 
-  const handleAddonSelection = (addonKey) => {
+  const handleAddonSelection = (addonKey, addonFee) => {
+    let updatedAddons = [];
+    let updatedTotalFee = totalFee;
+
     if (!selectedAddons.includes(addonKey)) {
-      setSelectedAddons([...selectedAddons, addonKey]);
-      setIsChecked(true);
+      updatedAddons = [...selectedAddons, addonKey];
+      updatedTotalFee += Number(addonFee.replace(/[^\d.-]/g, ""));
     } else {
-      const updatedAddons = selectedAddons.filter(
+      updatedAddons = selectedAddons.filter(
         (selected) => selected !== addonKey
       );
-      setSelectedAddons(updatedAddons);
-      setIsChecked(updatedAddons.length > 0);
+      updatedTotalFee -= Number(addonFee.replace(/[^\d.-]/g, ""));
     }
+
+    setSelectedAddons(updatedAddons);
+    setIsChecked(updatedAddons.length > 0);
+    setTotalFee(updatedTotalFee);
   };
 
   if (!selectedBookingDetails) {
@@ -63,10 +71,10 @@ const BookingContent = () => {
                 {selectedBookingDetails.name} Package for {selectedHall}
               </h3>
               <p>
-                Package Fee:
-                <br />
+                {/* Package Fee:
+                <br /> */}
                 <span className={styles.package__fee}>
-                  {selectedBookingDetails.fee}
+                  ${totalFee.toFixed(2)}
                 </span>
               </p>
             </div>
@@ -181,7 +189,9 @@ const BookingContent = () => {
                       <p>{detail.fee}</p>
                       <input
                         type="checkbox"
-                        onChange={() => handleAddonSelection(detail.key)}
+                        onChange={() =>
+                          handleAddonSelection(detail.key, detail.fee)
+                        }
                         checked={selectedAddons.includes(detail.key)}
                       />
                     </div>
@@ -192,7 +202,7 @@ const BookingContent = () => {
           </div>
           <BookingForm
             selectedPackage={selectedBookingDetails.name}
-            packageFee={selectedBookingDetails.fee}
+            packageFee={totalFee}
             selectedAddons={selectedAddons}
           />
         </div>
