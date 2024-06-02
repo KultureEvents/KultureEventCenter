@@ -34,7 +34,7 @@
       height: fit-content;
       transition: height 0.5s ease-in-out;
       display: flex;
-      padding: 30.337px;
+      padding: 30px 16px;
       flex-direction: column;
       gap: 18.202px;
       align-self: stretch;
