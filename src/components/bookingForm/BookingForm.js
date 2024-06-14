@@ -70,37 +70,36 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
       packageFee,
       selectedAddons,
     };
-    console.log(dataToSend);
 
-    // try {
-    //   const response = await fetch(
-    //     "https://contact-us-pj4v.onrender.com/api/booking",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(dataToSend),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        "https://contact-us-pj4v.onrender.com/api/booking",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        }
+      );
 
-    //   if (!response.ok) {
-    //     throw new Error("Network response was not ok");
-    //   }
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    //   const responseData = await response.json();
-    //   console.log("Server Response:", responseData);
-    //   toast.success("Your request has been successfully sent!");
+      const responseData = await response.json();
+      console.log("Server Response:", responseData);
+      toast.success("Your request has been successfully sent!");
 
-    //   setFormData(defaultValues);
-    // } catch (error) {
-    //   console.error("There was an error!", error);
-    //   toast.error(
-    //     "There was an error sending your request. Please try again later."
-    //   );
-    // } finally {
-    //   setLoading(false);
-    // }
+      setFormData(defaultValues);
+    } catch (error) {
+      console.error("There was an error!", error);
+      toast.error(
+        "There was an error sending your request. Please try again later."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
