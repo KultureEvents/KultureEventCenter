@@ -4,7 +4,6 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 
 const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
-  // Define state to store form data
   const defaultValues = {
     firstName: "",
     lastName: "",
@@ -12,8 +11,7 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     phoneNumber: "",
     eventName: "",
     date: "",
-    startTime: "",
-    endTime: "",
+    eventTime: "", // New field for time period
     estimatedGroupSize: "",
     Alcohol: "",
     scheduleTour: "",
@@ -35,7 +33,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     });
   };
 
-  // Function to validate form data
   const validateForm = () => {
     const newErrors = {};
 
@@ -56,62 +53,54 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     return newErrors;
   };
 
-  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Validate the form
     const formErrors = validateForm();
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
     }
 
-    // Clear errors if form is valid
     setErrors({});
-
-    // Set loading state
     setLoading(true);
 
-    // Prepare the data to send
     const dataToSend = {
       ...formData,
       selectedPackage,
       packageFee,
       selectedAddons,
     };
+    console.log(dataToSend);
 
-    try {
-      const response = await fetch(
-        "https://contact-us-pj4v.onrender.com/api/booking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        }
-      );
+    // try {
+    //   const response = await fetch(
+    //     "https://contact-us-pj4v.onrender.com/api/booking",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(dataToSend),
+    //     }
+    //   );
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+    //   if (!response.ok) {
+    //     throw new Error("Network response was not ok");
+    //   }
 
-      const responseData = await response.json();
-      console.log("Server Response:", responseData);
-      toast.success("Your request has been successfully sent!");
+    //   const responseData = await response.json();
+    //   console.log("Server Response:", responseData);
+    //   toast.success("Your request has been successfully sent!");
 
-      // Reset form after successful submission
-      setFormData(defaultValues);
-    } catch (error) {
-      console.error("There was an error!", error);
-      toast.error(
-        "There was an error sending your request. Please try again later."
-      );
-    } finally {
-      // Reset loading state
-      setLoading(false);
-    }
+    //   setFormData(defaultValues);
+    // } catch (error) {
+    //   console.error("There was an error!", error);
+    //   toast.error(
+    //     "There was an error sending your request. Please try again later."
+    //   );
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -119,7 +108,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
       <form className={styles.form__wrapper} onSubmit={handleSubmit}>
         <h3>Contact information</h3>
 
-        {/* First Name and Last Name input fields */}
         <div className={styles.form_group}>
           <div className={styles.formPair}>
             <input
@@ -152,7 +140,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           </div>
         </div>
 
-        {/* Email and Phone input fields */}
         <div className={styles.form_group}>
           <div className={styles.formPair}>
             <input
@@ -183,7 +170,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           </div>
         </div>
 
-        {/* Event Name, Date, Start Time, End Time, and Estimated Group Size input fields */}
         <input
           type="text"
           id="eventName"
@@ -194,9 +180,10 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           onChange={handleInputChange}
           required
         />
+
         <div className={styles.form_group}>
           <div className={styles.form_pair}>
-            <label htmlFor="startTime" className={styles.form_label}>
+            <label htmlFor="date" className={styles.form_label}>
               Desired Date
             </label>
             <input
@@ -212,33 +199,25 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           </div>
 
           <div className={styles.form_pair}>
-            <label htmlFor="startTime" className={styles.form_label}>
-              Start Time
+            <label htmlFor="eventTime" className={styles.form_label}>
+              Time Period
             </label>
-            <input
-              type="time"
-              id="startTime"
-              name="startTime"
-              className={styles.form_input}
-              value={formData.startTime}
+            <select
+              id="eventTime"
+              name="eventTime"
+              className={styles.form_select}
+              value={formData.eventTime}
               onChange={handleInputChange}
               required
-            />
-          </div>
-
-          <div className={styles.form_pair}>
-            <label htmlFor="endTime" className={styles.form_label}>
-              End Time
-            </label>
-            <input
-              type="time"
-              id="endTime"
-              name="endTime"
-              className={styles.form_input}
-              value={formData.endTime}
-              onChange={handleInputChange}
-              required
-            />
+            >
+              <option value="">Select Time Period *</option>
+              <option value="AM (11:00 AM - 5:00 PM)">
+                AM (11:00 AM - 5:00 PM)
+              </option>
+              <option value="PM (6:00 PM - 12:00 AM)">
+                PM (6:00 PM - 12:00 AM)
+              </option>
+            </select>
           </div>
         </div>
 
@@ -253,7 +232,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           required
         />
 
-        {/* Serving Alcohol, scheduleTour, and Phone Booth selection */}
         <select
           id="Alcohol"
           name="Alcohol"
@@ -293,7 +271,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           <option value="NO">NO</option>
         </select>
 
-        {/* Message textarea */}
         <textarea
           name="message"
           id="message"
@@ -304,7 +281,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           rows={5}
         ></textarea>
 
-        {/* Agreement checkbox */}
         <div className={styles.form_agreement}>
           <div className={styles.formPair}>
             <div
@@ -330,7 +306,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           </div>
         </div>
 
-        {/* Newsletter checkbox */}
         <div className={styles.form_news}>
           <input
             type="checkbox"
@@ -343,7 +318,6 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
           <p>Be the first to know about our exclusive discounts.</p>
         </div>
 
-        {/* Submit button */}
         <button type="submit" className={styles.form_btn} disabled={loading}>
           {loading ? (
             <div className="flex">
