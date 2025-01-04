@@ -34,7 +34,7 @@ const PackageNavigation = ({
         )}
 
         {/* Next button */}
-        {currentPackage !== "Platinum" && (
+        {currentPackage !== "Wedding" && (
           <button
             onClick={handleNextPackage}
             className={`${styles.packages__bottom_button} ${styles.packages__bottom_next}`}

@@ -23,17 +23,20 @@ const Packages = () => {
     Silver: [PackagesImg1, PackagesImg2],
     Gold: [PackagesImg3, PackagesImg4],
     Platinum: [PackagesImg5, PackagesImg6],
+    Wedding: [PackagesImg5, PackagesImg6],
   };
 
-  const handleNextPackage = () => {
-    if (currentPackage === "Silver") setCurrentPackage("Gold");
-    else if (currentPackage === "Gold") setCurrentPackage("Platinum");
-  };
+ const handleNextPackage = () => {
+   if (currentPackage === "Silver") setCurrentPackage("Gold");
+   else if (currentPackage === "Gold") setCurrentPackage("Platinum");
+   else if (currentPackage === "Platinum") setCurrentPackage("Wedding");
+ };
 
-  const handlePrevPackage = () => {
-    if (currentPackage === "Platinum") setCurrentPackage("Gold");
-    else if (currentPackage === "Gold") setCurrentPackage("Silver");
-  };
+ const handlePrevPackage = () => {
+   if (currentPackage === "Wedding") setCurrentPackage("Platinum");
+   else if (currentPackage === "Platinum") setCurrentPackage("Gold");
+   else if (currentPackage === "Gold") setCurrentPackage("Silver");
+ };
 
   return (
     <section className={`${styles.packages} section`} id="packages">

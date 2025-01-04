@@ -15,6 +15,8 @@ const PackagesBody = ({ currentPackage, activeHall }) => {
             ? styles.goldTitle
             : currentPackage === "Platinum"
             ? styles.platinumTitle
+            : currentPackage === "Wedding"
+            ? styles.weddingTitle
             : ""
         }`}
       >
@@ -37,8 +39,10 @@ const PackagesBody = ({ currentPackage, activeHall }) => {
               ? styles.silverTitle
               : currentPackage === "Gold"
               ? styles.goldTitle
-              : currentPackage === "Platinum"
-              ? styles.platinumTitle
+              : currentPackage === "Wedding"
+              ? styles.weddingTitle
+              : currentPackage === "Wedding"
+              ? styles.weddingTitle
               : ""
           }`}
         >

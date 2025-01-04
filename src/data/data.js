@@ -115,6 +115,29 @@ export const packageDetails = {
       ],
       price: "$3,350",
     },
+    Wedding: {
+      details: [
+        { icon: <PlatinumStar />, text: "All Day Venue Rental (12 Hours)" },
+        {
+          icon: <PlatinumStar />,
+          text: "Decor for both Ceremony and Reception (additional charge for more than 100 guests). Additional charge for wine & water glasses",
+        },
+        { icon: <PlatinumStar />, text: "Wedding Rehearsal (weekday)" },
+        { icon: <PlatinumStar />, text: "Gold Chiavari Chairs" },
+        { icon: <PlatinumStar />, text: "72 Inch Round Tables" },
+        { icon: <PlatinumStar />, text: "4 Six-Foot Rectangular Tables" },
+        { icon: <PlatinumStar />, text: "Free Wifi" },
+        { icon: <PlatinumStar />, text: "Up-Lighting" },
+        { icon: <PlatinumStar />, text: "Access to (4) 58” TVs" },
+        { icon: <PlatinumStar />, text: "Black Leather Sofas with tables" },
+        { icon: <PlatinumStar />, text: "Sound System w/ Bluetooth" },
+        { icon: <PlatinumStar />, text: "Use of In-House Bar" },
+        { icon: <PlatinumStar />, text: "Food Prep Area" },
+        { icon: <PlatinumStar />, text: "Free Ample Parking" },
+        { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
+      ],
+      price: "$5,500",
+    },
   },
   "Kulture II": {
     Silver: {
@@ -187,6 +210,29 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Benz" },
       ],
       price: "$2,550",
+    },
+    Wedding: {
+      details: [
+        { icon: <PlatinumStar />, text: "All Day Venue Rental (12 Hours)" },
+        {
+          icon: <PlatinumStar />,
+          text: "Decor for both Ceremony and Reception (additional charge for more than 70 guests). Additional charge for wine & water glasses",
+        },
+        { icon: <PlatinumStar />, text: "Wedding Rehearsal (weekday)" },
+        { icon: <PlatinumStar />, text: "Gold Chiavari Chairs" },
+        { icon: <PlatinumStar />, text: "72 Inch Round Tables" },
+        { icon: <PlatinumStar />, text: "4 Six-Foot Rectangular Tables" },
+        { icon: <PlatinumStar />, text: "Free Wifi" },
+        { icon: <PlatinumStar />, text: "Up-Lighting" },
+        { icon: <PlatinumStar />, text: "Access to (4) 58” TVs" },
+        { icon: <PlatinumStar />, text: "Black Leather Sofas with tables" },
+        { icon: <PlatinumStar />, text: "Sound System w/ Bluetooth" },
+        { icon: <PlatinumStar />, text: "Use of In-House Bar" },
+        { icon: <PlatinumStar />, text: "Food Prep Area" },
+        { icon: <PlatinumStar />, text: "Free Ample Parking" },
+        { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
+      ],
+      price: "$4,500",
     },
   },
 };
@@ -274,6 +320,31 @@ export const bookingDetails = {
         },
       ],
     },
+    {
+      name: "Wedding",
+      fee: "$5,500",
+      images: [PackagesImg5, PackagesImg6],
+      addOn: [
+        {
+          key: addonKeys.sprinterVan,
+          star: <PlatinumStar />,
+          text: "Sprinter Van round trip",
+          fee: "$500",
+        },
+        {
+          key: addonKeys.throneChair,
+          star: <PlatinumStar />,
+          text: "Throne Chair (x1)",
+          fee: "$300",
+        },
+        {
+          key: addonKeys.redCarpet,
+          star: <PlatinumStar />,
+          text: "Red carpet with gold stanchions",
+          fee: "$200",
+        },
+      ],
+    },
   ],
   "Kulture II": [
     {
@@ -327,8 +398,8 @@ export const bookingDetails = {
       ],
     },
     {
-      name: "Platinum",
-      fee: "$2,395",
+      name: "Wedding",
+      fee: "$4,500",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {
