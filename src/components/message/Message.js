@@ -193,7 +193,7 @@ const Message = ({ imgSrc }) => {
                   name="venue"
                   className={styles.message__formInput}
                 >
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue={"Select Venue"}>
                     Select Venue
                   </option>
                   <option value="Kulture I">Kulture I</option>

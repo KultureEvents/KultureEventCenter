@@ -23,7 +23,7 @@ const PackageNavigation = ({
       </Link>
       <div className={styles.packages__bottom_nav}>
         {/* Previous button */}
-        {currentPackage !== "Silver" && (
+        {currentPackage !== "Wedding" && (
           <button
             onClick={handlePrevPackage}
             className={`${styles.packages__bottom_button} ${styles.packages__bottom_prev}`}
@@ -34,7 +34,7 @@ const PackageNavigation = ({
         )}
 
         {/* Next button */}
-        {currentPackage !== "Wedding" && (
+        {currentPackage !== "Platinum" && (
           <button
             onClick={handleNextPackage}
             className={`${styles.packages__bottom_button} ${styles.packages__bottom_next}`}

@@ -16,7 +16,7 @@ import PackagesBody from "./components/PackagesBody";
 
 const Packages = () => {
   // State variables
-  const [currentPackage, setCurrentPackage] = useState("Silver");
+  const [currentPackage, setCurrentPackage] = useState("Wedding");
   const [activeHall, setActiveHall] = useState("Kulture I");
 
   const packageImages = {
@@ -26,17 +26,22 @@ const Packages = () => {
     Wedding: [PackagesImg5, PackagesImg6],
   };
 
- const handleNextPackage = () => {
-   if (currentPackage === "Silver") setCurrentPackage("Gold");
-   else if (currentPackage === "Gold") setCurrentPackage("Platinum");
-   else if (currentPackage === "Platinum") setCurrentPackage("Wedding");
- };
+  // const handleNextPackage = () => {
+  //   if (currentPackage === "Silver") setCurrentPackage("Gold");
+  //   else if (currentPackage === "Gold") setCurrentPackage("Platinum");
+  //   else if (currentPackage === "Platinum") setCurrentPackage("Wedding");
+  // };
+  const handleNextPackage = () => {
+    if (currentPackage === "Wedding") setCurrentPackage("Silver");
+    else if (currentPackage === "Silver") setCurrentPackage("Gold");
+    else if (currentPackage === "Gold") setCurrentPackage("Platinum");
+  };
 
- const handlePrevPackage = () => {
-   if (currentPackage === "Wedding") setCurrentPackage("Platinum");
-   else if (currentPackage === "Platinum") setCurrentPackage("Gold");
-   else if (currentPackage === "Gold") setCurrentPackage("Silver");
- };
+  const handlePrevPackage = () => {
+    if (currentPackage === "Platinum") setCurrentPackage("Gold");
+    else if (currentPackage === "Gold") setCurrentPackage("Silver");
+    else if (currentPackage === "Silver") setCurrentPackage("Wedding");
+  };
 
   return (
     <section className={`${styles.packages} section`} id="packages">

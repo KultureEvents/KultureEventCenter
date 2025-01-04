@@ -120,7 +120,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "All Day Venue Rental (12 Hours)" },
         {
           icon: <PlatinumStar />,
-          text: "Decor for both Ceremony and Reception (additional charge for more than 100 guests). Additional charge for wine & water glasses",
+          text: "Decor for both Ceremony and Reception (additional charge for more than 100 guests)",
         },
         { icon: <PlatinumStar />, text: "Wedding Rehearsal (weekday)" },
         { icon: <PlatinumStar />, text: "Gold Chiavari Chairs" },
@@ -216,7 +216,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "All Day Venue Rental (12 Hours)" },
         {
           icon: <PlatinumStar />,
-          text: "Decor for both Ceremony and Reception (additional charge for more than 70 guests). Additional charge for wine & water glasses",
+          text: "Decor for both Ceremony and Reception (additional charge for more than 70 guests).",
         },
         { icon: <PlatinumStar />, text: "Wedding Rehearsal (weekday)" },
         { icon: <PlatinumStar />, text: "Gold Chiavari Chairs" },
