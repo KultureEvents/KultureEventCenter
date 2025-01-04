@@ -34,8 +34,8 @@ const Message = ({ imgSrc }) => {
       errors.date = "Date of Event is required";
     }
 
-    if (!data.eventLocation) {
-      errors.eventLocation = "Event Location is required";
+    if (!data.venue) {
+      errors.venue = "Venue is required";
     }
 
     if (!data.hearAboutUs) {
@@ -186,17 +186,21 @@ const Message = ({ imgSrc }) => {
                   htmlFor="eventLocation"
                   className={styles.message__formLabel}
                 >
-                  Event Location
+                  Venue
                 </label>
-                <input
-                  type="text"
-                  id="eventLocation"
-                  name="eventLocation"
+                <select
+                  id="venue"
+                  name="venue"
                   className={styles.message__formInput}
-                  placeholder="Where is the Event?"
-                />
+                >
+                  <option value="" disabled selected>
+                    Select Venue
+                  </option>
+                  <option value="Kulture I">Kulture I</option>
+                  <option value="Kulture II">Kulture II</option>
+                </select>
                 {errors.eventLocation && (
-                  <span className={styles.error}>{errors.eventLocation}</span>
+                  <span className={styles.error}>{errors.venue}</span>
                 )}
               </div>
 

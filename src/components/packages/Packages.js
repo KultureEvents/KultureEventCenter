@@ -17,7 +17,7 @@ import PackagesBody from "./components/PackagesBody";
 const Packages = () => {
   // State variables
   const [currentPackage, setCurrentPackage] = useState("Silver");
-  const [activeHall, setActiveHall] = useState("Hall I");
+  const [activeHall, setActiveHall] = useState("Kulture I");
 
   const packageImages = {
     Silver: [PackagesImg1, PackagesImg2],
@@ -62,19 +62,19 @@ const Packages = () => {
           <div className={styles.packages__tabs}>
             <button
               className={`${styles.packages__tab} ${
-                activeHall === "Hall I" ? styles.active : ""
+                activeHall === "Kulture I" ? styles.active : ""
               }`}
-              onClick={() => setActiveHall("Hall I")}
+              onClick={() => setActiveHall("Kulture I")}
             >
-              Packages for Hall I
+              Packages for Kulture I
             </button>
             <button
               className={`${styles.packages__tab} ${
-                activeHall === "Hall II" ? styles.active : ""
+                activeHall === "Kulture II" ? styles.active : ""
               }`}
-              onClick={() => setActiveHall("Hall II")}
+              onClick={() => setActiveHall("Kulture II")}
             >
-              Packages for Hall II
+              Packages for Kulture II
             </button>
           </div>
 

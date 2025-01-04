@@ -43,7 +43,7 @@ export const NavLinks = [
 
 // packageData
 export const packageDetails = {
-  "Hall I": {
+  "Kulture I": {
     Silver: {
       details: [
         { icon: <SilverStar />, text: "6-Hour Venue Rental" },
@@ -57,10 +57,14 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Black Leather Sofas with tables" },
         { icon: <SilverStar />, text: "Sound System w/ Bluetooth" },
         { icon: <SilverStar />, text: "Use of In-House Bar" },
-        { icon: <SilverStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <SilverStar />, text: "Ice" },
+        { icon: <SilverStar />, text: "Food Prep Area" },
+        { icon: <SilverStar />, text: "Food Warmer" },
+        { icon: <SilverStar />, text: "Free Ample Parking" },
+        { icon: <SilverStar />, text: "Charger Plates (Clear)" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$2,150",
+      price: "$2,550",
     },
     Gold: {
       details: [
@@ -75,12 +79,16 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "Black Leather Sofas with tables" },
         { icon: <GoldStar />, text: "Sound System w/ Bluetooth" },
         { icon: <GoldStar />, text: "Use of In-House Bar" },
-        { icon: <GoldStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <GoldStar />, text: "Ice" },
+        { icon: <GoldStar />, text: "Food Prep Area" },
+        { icon: <GoldStar />, text: "Food Warmer" },
+        { icon: <GoldStar />, text: "Free Ample Parking" },
+        { icon: <GoldStar />, text: "Charger Plates (Clear)" },
         { icon: <GoldStar />, text: "Cleaning (with exception of trash)" },
         { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$2,700",
+      price: "$3,150",
     },
     Platinum: {
       details: [
@@ -95,16 +103,20 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Black Leather Sofas with tables" },
         { icon: <PlatinumStar />, text: "Sound System w/ Bluetooth" },
         { icon: <PlatinumStar />, text: "Use of In-House Bar" },
-        { icon: <PlatinumStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <PlatinumStar />, text: "Ice" },
+        { icon: <PlatinumStar />, text: "Food Prep Area" },
+        { icon: <PlatinumStar />, text: "Food Warmer" },
+        { icon: <PlatinumStar />, text: "Free Ample Parking" },
+        { icon: <PlatinumStar />, text: "Charger Plates (Clear)" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
         { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
         { icon: <SilverStar />, text: "Roundtrip pickup/Dropoff in Benz" },
       ],
-      price: "$2,995",
+      price: "$3,350",
     },
   },
-  "Hall II": {
+  "Kulture II": {
     Silver: {
       details: [
         { icon: <SilverStar />, text: "6-Hour Venue Rental" },
@@ -118,10 +130,14 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Black Leather Sofas with tables" },
         { icon: <SilverStar />, text: "Sound System w/ Bluetooth" },
         { icon: <SilverStar />, text: "Use of In-House Bar" },
-        { icon: <SilverStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <SilverStar />, text: "Ice" },
+        { icon: <SilverStar />, text: "Food Prep Area" },
+        { icon: <SilverStar />, text: "Food Warmer" },
+        { icon: <SilverStar />, text: "Free Ample Parking" },
+        { icon: <SilverStar />, text: "Charger Plates (Clear)" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$1,550",
+      price: "$1,750",
     },
     Gold: {
       details: [
@@ -136,12 +152,16 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "Black Leather Sofas with tables" },
         { icon: <GoldStar />, text: "Sound System w/ Bluetooth" },
         { icon: <GoldStar />, text: "Use of In-House Bar" },
-        { icon: <GoldStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <GoldStar />, text: "Ice" },
+        { icon: <GoldStar />, text: "Food Prep Area" },
+        { icon: <GoldStar />, text: "Food Warmer" },
+        { icon: <GoldStar />, text: "Free Ample Parking" },
+        { icon: <GoldStar />, text: "Charger Plates (Clear)" },
         { icon: <GoldStar />, text: "Cleaning (with exception of trash)" },
         { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$2,100",
+      price: "$2,350",
     },
     Platinum: {
       details: [
@@ -156,13 +176,17 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Black Leather Sofas with tables" },
         { icon: <PlatinumStar />, text: "Sound System w/ Bluetooth" },
         { icon: <PlatinumStar />, text: "Use of In-House Bar" },
-        { icon: <PlatinumStar />, text: "Food Prep Area Free Ample Parking" },
+        { icon: <PlatinumStar />, text: "Ice" },
+        { icon: <PlatinumStar />, text: "Food Prep Area" },
+        { icon: <PlatinumStar />, text: "Food Warmer" },
+        { icon: <PlatinumStar />, text: "FFree Ample Parking" },
+        { icon: <PlatinumStar />, text: "Charger Plates (Clear)" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
         { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
         { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Benz" },
       ],
-      price: "$2,395",
+      price: "$2,550",
     },
   },
 };
@@ -174,7 +198,7 @@ const addonKeys = {
 };
 
 export const bookingDetails = {
-  "Hall I": [
+  "Kulture I": [
     {
       name: "Silver",
       fee: "$2,150",
@@ -251,7 +275,7 @@ export const bookingDetails = {
       ],
     },
   ],
-  "Hall II": [
+  "Kulture II": [
     {
       name: "Silver",
       fee: "$1,550",
