@@ -16,7 +16,7 @@ import PackagesBody from "./components/PackagesBody";
 
 const Packages = () => {
   // State variables
-  const [currentPackage, setCurrentPackage] = useState("Wedding");
+  const [currentPackage, setCurrentPackage] = useState("Silver");
   const [activeHall, setActiveHall] = useState("Kulture I");
 
   const packageImages = {
@@ -32,15 +32,15 @@ const Packages = () => {
   //   else if (currentPackage === "Platinum") setCurrentPackage("Wedding");
   // };
   const handleNextPackage = () => {
-    if (currentPackage === "Wedding") setCurrentPackage("Silver");
-    else if (currentPackage === "Silver") setCurrentPackage("Gold");
+    if (currentPackage === "Silver") setCurrentPackage("Gold");
     else if (currentPackage === "Gold") setCurrentPackage("Platinum");
+    else if (currentPackage === "Platinum") setCurrentPackage("Wedding");
   };
 
   const handlePrevPackage = () => {
-    if (currentPackage === "Platinum") setCurrentPackage("Gold");
+    if (currentPackage === "Wedding") setCurrentPackage("Platinum");
+    else if (currentPackage === "Platinum") setCurrentPackage("Gold");
     else if (currentPackage === "Gold") setCurrentPackage("Silver");
-    else if (currentPackage === "Silver") setCurrentPackage("Wedding");
   };
 
   return (
