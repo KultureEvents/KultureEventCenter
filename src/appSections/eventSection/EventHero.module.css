@@ -14,7 +14,8 @@
 }
 
 .eventHero__container_link_1 {
-  background-image: url("../../../public/images/eventHero1.png");
+  background-image: url("../../../public/images/eventHero1.jpg");
+  background-color: #1e1c1c;
 }
 .eventHero__container_link_2 {
   background-image: url("../../../public/images/eventHero2.png");
