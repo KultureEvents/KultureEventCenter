@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 export const metadata = {
   title: "Kulture Event Center",
   description:
-    "Kulture Event Center is a premier event space in the heart of downtown Houston. We offer a variety of event spaces for weddings, corporate events, and more.",
+    "Kulture Event Center is a premier event space in the heart of downtown Marietta, GA. We offer a variety of event spaces for weddings, corporate events, and more.",
 };
 
 export default function RootLayout({ children }) {
@@ -29,15 +29,6 @@ export default function RootLayout({ children }) {
         charSet="UTF-8"
         crossOrigin="*"
       />
-
-      {/* Include the second external script */}
-
-      {/* <Script
-        src="https://utt.impactcdn.com/P-A5462282-12a4-411d-8ac4-fbf35198c56a1.js"
-        strategy="afterInteractive"
-        charSet="UTF-8"
-        crossOrigin="*"
-      /> */}
     </html>
   );
 }
