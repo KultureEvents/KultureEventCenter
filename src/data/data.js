@@ -85,7 +85,7 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "Free Ample Parking" },
         { icon: <GoldStar />, text: "Charger Plates (Clear)" },
         { icon: <GoldStar />, text: "Cleaning (with exception of trash)" },
-        { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
+        { icon: <GoldStar />, text: "360 Photo Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
       price: "$3,150",
@@ -109,9 +109,9 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Free Ample Parking" },
         { icon: <PlatinumStar />, text: "Charger Plates (Clear)" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
-        { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
+        { icon: <PlatinumStar />, text: "360 Photo Booth 2 hr" },
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
-        { icon: <SilverStar />, text: "Roundtrip pickup/Dropoff in Benz" },
+        { icon: <SilverStar />, text: "Roundtrip pickup/Dropoff in Mercedes Sprinter Van" },
       ],
       price: "$3,350",
     },
@@ -180,7 +180,7 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "Free Ample Parking" },
         { icon: <GoldStar />, text: "Charger Plates (Clear)" },
         { icon: <GoldStar />, text: "Cleaning (with exception of trash)" },
-        { icon: <GoldStar />, text: "360 Phone Booth 2 hr" },
+        { icon: <GoldStar />, text: "360 Photo Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
       price: "$2,350",
@@ -203,9 +203,9 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "FFree Ample Parking" },
         { icon: <PlatinumStar />, text: "Charger Plates (Clear)" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
-        { icon: <PlatinumStar />, text: "360 Phone Booth 2 hr" },
+        { icon: <PlatinumStar />, text: "360 Photo Booth 2 hr" },
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
-        { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Benz" },
+        { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Mercedes Sprinter Van" },
       ],
       price: "$2,550",
     },
@@ -250,7 +250,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <SilverStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$300",
         },
         {
@@ -275,7 +275,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <GoldStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$300",
         },
         {
@@ -300,7 +300,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <PlatinumStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$500",
         },
         {
@@ -325,7 +325,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <PlatinumStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$500",
         },
         {
@@ -353,7 +353,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <SilverStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$300",
         },
         {
@@ -378,7 +378,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <GoldStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$300",
         },
         {
@@ -404,7 +404,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <PlatinumStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$500",
         },
         {
@@ -430,7 +430,7 @@ export const bookingDetails = {
         {
           key: addonKeys.sprinterVan,
           star: <PlatinumStar />,
-          text: "Sprinter Van round trip",
+          text: "Mercedes Sprinter Van round trip",
           fee: "$500",
         },
         {
