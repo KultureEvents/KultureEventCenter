@@ -7,6 +7,7 @@ import { ImgPlaceholder1 } from "../../public/images";
 import Message from "@/components/message/Message";
 import HomeService from "@/appSections/homeSections/homeService/HomeService";
 import Packages from "@/components/packages/Packages";
+import AwardHighlight from "@/components/award/AwardHighlight";
 import { client } from "@/sanityClient/sanity";
 
 export const revalidate = 10; // revalidate at most 10 seconds
@@ -30,6 +31,7 @@ const HomePage = async () => {
     <>
       <HomeHero slides={homeImage?.homeHeroImages} />
       <HomeIntro homeIntroImages={homeImage?.homeIntroImages} />
+      <AwardHighlight />
       <HomeService
         homeServiceData={homeImage?.homeServiceData}
         title={"Our Event Services"}

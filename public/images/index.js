@@ -20,3 +20,6 @@ export { default as PackagesImg6 } from "./packagesImg6.png";
 export { default as contactHeroImg } from "./contactHero.png";
 
 export { default as aboutInfo1 } from "./aboutInfo1.png";
+
+export { default as AwardPlaque } from "./award1.jpeg";
+export { default as AwardShowcase } from "./award2.jpeg";

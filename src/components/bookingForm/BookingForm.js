@@ -43,8 +43,11 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
     }
-    if (!formData.phoneNumber) {
+    const phoneDigits = formData.phoneNumber.replace(/\D/g, "");
+    if (!phoneDigits) {
       newErrors.phoneNumber = "Phone number is required";
+    } else if (phoneDigits.length < 10) {
+      newErrors.phoneNumber = "Enter at least 10 digits";
     }
     if (!formData.agreement) {
       newErrors.agreement = "You must agree to the terms and conditions";
@@ -66,6 +69,7 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
 
     const dataToSend = {
       ...formData,
+      phoneNumber: formData.phoneNumber.replace(/\D/g, ""),
       selectedPackage,
       packageFee,
       selectedAddons,

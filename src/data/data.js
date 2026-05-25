@@ -64,7 +64,7 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Charger Plates (Clear)" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$2,550",
+      price: "$2,650",
     },
     Gold: {
       details: [
@@ -88,7 +88,7 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "360 Photo Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$3,150",
+      price: "$3,250",
     },
     Platinum: {
       details: [
@@ -113,7 +113,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
         { icon: <SilverStar />, text: "Roundtrip pickup/Dropoff in Mercedes Sprinter Van" },
       ],
-      price: "$3,350",
+      price: "$3,450",
     },
     Wedding: {
       details: [
@@ -136,7 +136,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Free Ample Parking" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$5,500",
+      price: "$5,600",
     },
   },
 
@@ -160,7 +160,7 @@ export const packageDetails = {
         { icon: <SilverStar />, text: "Charger Plates (Clear)" },
         { icon: <SilverStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$1,750",
+      price: "$1,850",
     },
     Gold: {
       details: [
@@ -183,7 +183,7 @@ export const packageDetails = {
         { icon: <GoldStar />, text: "360 Photo Booth 2 hr" },
         { icon: <GoldStar />, text: "2 Throne Chairs (W/S)" },
       ],
-      price: "$2,350",
+      price: "$2,450",
     },
     Platinum: {
       details: [
@@ -207,7 +207,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "2 Throne Chairs (W/S)" },
         { icon: <PlatinumStar />, text: "Roundtrip pickup/Dropoff in Mercedes Sprinter Van" },
       ],
-      price: "$2,550",
+      price: "$2,650",
     },
     Wedding: {
       details: [
@@ -229,7 +229,7 @@ export const packageDetails = {
         { icon: <PlatinumStar />, text: "Free Ample Parking" },
         { icon: <PlatinumStar />, text: "Cleaning (with exception of trash)" },
       ],
-      price: "$4,500",
+      price: "$4,600",
     },
   },
 };
@@ -244,7 +244,7 @@ export const bookingDetails = {
   "Kulture I": [
     {
       name: "Silver",
-      fee: "$2,550",
+      fee: "$2,650",
       images: [PackagesImg1, PackagesImg2],
       addOn: [
         {
@@ -269,7 +269,7 @@ export const bookingDetails = {
     },
     {
       name: "Gold",
-      fee: "$3,150",
+      fee: "$3,250",
       images: [PackagesImg3, PackagesImg4],
       addOn: [
         {
@@ -294,7 +294,7 @@ export const bookingDetails = {
     },
     {
       name: "Platinum",
-      fee: "$3,350",
+      fee: "$3,450",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {
@@ -319,7 +319,7 @@ export const bookingDetails = {
     },
     {
       name: "Wedding",
-      fee: "$5,500",
+      fee: "$5,600",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {
@@ -347,7 +347,7 @@ export const bookingDetails = {
   "Kulture II": [
     {
       name: "Silver",
-      fee: "$1,750",
+      fee: "$1,850",
       images: [PackagesImg1, PackagesImg2],
       addOn: [
         {
@@ -372,7 +372,7 @@ export const bookingDetails = {
     },
     {
       name: "Gold",
-      fee: "$2,350",
+      fee: "$2,450",
       images: [PackagesImg3, PackagesImg4],
       addOn: [
         {
@@ -397,8 +397,8 @@ export const bookingDetails = {
     },
     
     {
-      name: "Premium",
-      fee: "$2,550",
+      name: "Platinum",
+      fee: "$2,650",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {
@@ -424,7 +424,7 @@ export const bookingDetails = {
 
     {
       name: "Wedding",
-      fee: "$4,500",
+      fee: "$4,600",
       images: [PackagesImg5, PackagesImg6],
       addOn: [
         {

@@ -5,6 +5,7 @@ import { ImgPlaceholder2 } from "../../../public/images";
 import Message from "@/components/message/Message";
 import AboutHero from "@/appSections/aboutSections/aboutHero/AboutHero";
 import AboutInfo from "@/appSections/aboutSections/aboutInfo/AboutInfo";
+import AwardHighlight from "@/components/award/AwardHighlight";
 import { client } from "@/sanityClient/sanity";
 
 export const revalidate = 10; // revalidate at most 10 seconds
@@ -34,6 +35,7 @@ const AboutPage = async () => {
       <PageBanner backgroundImage="/images/banner.png" title="KULTURE EVENTS" />
 
       <AboutHero aboutData={aboutData} />
+      <AwardHighlight />
       <Team teamImages={homeImage?.teamImages} />
       <AboutInfo />
       <Message imgSrc={ImgPlaceholder2} />
