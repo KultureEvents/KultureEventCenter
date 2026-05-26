@@ -1,9 +1,17 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./BookingForm.module.css";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { submitWeb3Form } from "@/lib/submitWeb3Form";
 
-const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
+const BookingForm = ({
+  selectedHall,
+  selectedPackage,
+  packageFee,
+  selectedAddons,
+}) => {
   const defaultValues = {
     firstName: "",
     lastName: "",
@@ -70,36 +78,56 @@ const BookingForm = ({ selectedPackage, packageFee, selectedAddons }) => {
     const dataToSend = {
       ...formData,
       phoneNumber: formData.phoneNumber.replace(/\D/g, ""),
+      selectedHall,
       selectedPackage,
       packageFee,
       selectedAddons,
     };
 
     try {
-      const response = await fetch(
-        "https://contact-us-pj4v.onrender.com/api/booking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        }
-      );
+      const hall = selectedHall || "Not specified";
+      const pkg = selectedPackage || "Not specified";
+      const addons =
+        Array.isArray(selectedAddons) && selectedAddons.length > 0
+          ? selectedAddons.join(", ")
+          : "None";
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      await submitWeb3Form({
+        subject: `[BOOKING] ${pkg} package — ${hall}`,
+        from_name: "Kulture — Book Now Form",
+        "FORM TYPE": "BOOKING — Package request",
+        "Form Page": "Complete Your Booking (/bookings)",
+        replyto: dataToSend.email,
+        name: `${dataToSend.firstName} ${dataToSend.lastName}`,
+        email: dataToSend.email,
+        "First Name": dataToSend.firstName,
+        "Last Name": dataToSend.lastName,
+        "Phone Number": dataToSend.phoneNumber,
+        Venue: hall,
+        Package: pkg,
+        "Package Fee (USD)":
+          dataToSend.packageFee != null ? String(dataToSend.packageFee) : "N/A",
+        "Selected Add-Ons": addons,
+        "Event Name": dataToSend.eventName || "(none)",
+        "Desired Date": dataToSend.date || "(none)",
+        "Time Period": dataToSend.eventTime || "(none)",
+        "Estimated Group Size": dataToSend.estimatedGroupSize || "(none)",
+        "Serving Alcohol": dataToSend.Alcohol || "(none)",
+        "Schedule A Tour": dataToSend.scheduleTour || "(none)",
+        "360 Phone Booth": dataToSend.phoneBooth || "(none)",
+        message: dataToSend.message || "(none)",
+        "Marketing Opt-In": dataToSend.news ? "Yes" : "No",
+        "Agreed to Terms": dataToSend.agreement ? "Yes" : "No",
+      });
 
-      const responseData = await response.json();
-      console.log("Server Response:", responseData);
       toast.success("Your request has been successfully sent!");
 
       setFormData(defaultValues);
     } catch (error) {
       console.error("There was an error!", error);
       toast.error(
-        "There was an error sending your request. Please try again later."
+        error.message ||
+          "There was an error sending your request. Please try again later."
       );
     } finally {
       setLoading(false);

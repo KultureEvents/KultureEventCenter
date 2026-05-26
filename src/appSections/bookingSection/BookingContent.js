@@ -201,6 +201,7 @@ const BookingContent = () => {
             )}
           </div>
           <BookingForm
+            selectedHall={selectedHall}
             selectedPackage={selectedBookingDetails.name}
             packageFee={totalFee}
             selectedAddons={selectedAddons}

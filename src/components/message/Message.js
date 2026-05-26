@@ -4,8 +4,7 @@ import styles from "./Message.module.css";
 import Image from "next/image";
 import { Arrow2 } from "../../../public/svg";
 import { toast } from "react-toastify";
-
-const CONTACT_API = "https://contact-us-pj4v.onrender.com/api/contactus";
+import { submitWeb3Form } from "@/lib/submitWeb3Form";
 
 const normalizePhone = (value) => value.replace(/\D/g, "");
 
@@ -67,26 +66,30 @@ const Message = ({ imgSrc }) => {
     setLoading(true);
 
     try {
-      const response = await fetch(CONTACT_API, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      await submitWeb3Form({
+        subject: `[CONTACT] General inquiry — ${data.venue}`,
+        from_name: "Kulture — Contact Form",
+        "FORM TYPE": "CONTACT — General inquiry",
+        "Form Page": "Message Us (Home / About / Contact)",
+        replyto: data.email,
+        name: data.fullName,
+        email: data.email,
+        "Full Name": data.fullName,
+        "Phone Number": data.phoneNumber,
+        "Date of Event": data.date,
+        Venue: data.venue,
+        "How Did You Hear About Us": data.hearAboutUs,
+        message: data.message || "(none)",
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      await response.json();
       toast.success("Message sent successfully. We will get back to you shortly.");
       e.target.reset();
       setErrors({});
     } catch (error) {
       console.error("There was a problem with your submission:", error);
       toast.error(
-        "We could not send your message right now. Please try again or call us directly."
+        error.message ||
+          "We could not send your message right now. Please try again or call us directly."
       );
     } finally {
       setLoading(false);
