@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./ContactHero.module.css";
-
 import { contactHeroImg } from "../../../public/images";
 import Image from "next/image";
+import { Mail, Phone } from "../../../public/svg";
 
 const ContactHero = () => {
   return (
     <section className={`${styles.contactHero} section`}>
       <div className={`${styles.contactHero__container} container`}>
-        <div className={styles.contactHero__container_contents}>
+        <div className={styles.contactHero__content}>
           <h2>Contact Us</h2>
 
           <div className={styles.contactHero__details}>
@@ -18,15 +18,25 @@ const ContactHero = () => {
               2932 Canton Road Marietta, Georgia 30066
             </p>
 
-            <p>
+            <div className={styles.contactHero__block}>
               <strong>CONTACT INFORMATION:</strong>
-              <br />
-              info@kultureevents.com
-              <br />
-              Venue Management
-              <br />
-              Tel: 470-257-7997
-            </p>
+              <ul className={styles.contactHero__list}>
+                <li>
+                  <span className={styles.contactHero__icon} aria-hidden="true">
+                    <Mail />
+                  </span>
+                  <a href="mailto:info@kultureevents.com">
+                    Mail: info@kultureevents.com
+                  </a>
+                </li>
+                <li>
+                  <span className={styles.contactHero__icon} aria-hidden="true">
+                    <Phone />
+                  </span>
+                  <a href="tel:+14702577997">Tel: 470-257-7997</a>
+                </li>
+              </ul>
+            </div>
 
             <p>
               <strong>BUSINESS HOURS:</strong>
@@ -34,15 +44,18 @@ const ContactHero = () => {
               Monday-Sunday 9AM-12AM
             </p>
           </div>
-          <Image src={contactHeroImg} alt="about us" width={608} height={568} />
-
-          {/* <button
-            type="button"
-            className={styles.contactHero__container_image_btn}
-          >
-            Contact Us
-          </button> */}
         </div>
+
+        <figure className={styles.contactHero__media}>
+          <Image
+            src={contactHeroImg}
+            alt="Kulture Event Center venue interior"
+            width={608}
+            height={568}
+            className={styles.contactHero__image}
+            priority
+          />
+        </figure>
       </div>
     </section>
   );

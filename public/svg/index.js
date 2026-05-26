@@ -14,3 +14,5 @@ export { default as SilverStar } from "./silver-star.svg";
 export { default as GoldStar } from "./gold-start.svg";
 export { default as PlatinumStar } from "./platinum-star.svg";
 export { default as ArrowCircle } from "./arrow-circle.svg";
+export { default as Mail } from "./mail.svg";
+export { default as Phone } from "./phone.svg";
